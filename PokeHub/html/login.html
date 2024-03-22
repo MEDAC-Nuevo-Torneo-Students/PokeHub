@@ -10,10 +10,14 @@
 </head>
 <body>
     <header>
-        <div class="header">
-            <img src="https://cdn.glitch.global/7155ba4e-41e9-433a-83de-c092e924212a/logo.png?v=1710930442324" id="logo">
-        </div>
-        <button class="circle" id="circle"></button>
+        <div id="header-container"></div>
+        <script>
+            fetch('/html/header.html')
+            .then(response => response.text())
+            .then(html => {
+            document.getElementById('header-container').innerHTML = html;
+            });
+        </script>
     </heaer>
     <main>
         <div class="panel">
@@ -29,16 +33,18 @@
                 </div>
                 <button type="submit" class="btn">Iniciar sesión</button>
             </form>
-            <p>No account yet? <a href="register.html">Register here.</a></p>
+            <p>No account yet? <a href="home.html">Register here.</a></p>
         </div>
     </main>
     <footer>
-        <div class="low">
-            <pre id="copyright">
-                All Content is © Copyright of PokeHub.com 2024-2024. 
-    Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2024
-            </pre>
-        </div>  
+        <div id="footer-container"></div>
+        <script>
+            fetch('/html/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-container').innerHTML = html;
+                });
+        </script> 
     </footer>
     <script src="/jscript/script.js"></script>
 </body>

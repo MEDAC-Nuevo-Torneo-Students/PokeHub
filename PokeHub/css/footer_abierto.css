@@ -11,7 +11,7 @@
     bottom: 0;
     width: 100%;
     transition: height 2s ease, border-top 2s ease;
-    z-index: 2;
+    z-index: 1;
     border-top: 0.1rem solid black;
 }
 
