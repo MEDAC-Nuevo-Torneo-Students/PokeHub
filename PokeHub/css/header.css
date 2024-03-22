@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    background: rgb(235, 235, 235);
+}
+
+
+.header {
+    background-color: red;
+    position: relative;
+    height: 50vh;
+    transition: height 2s ease;
+    z-index: 2;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: 0.5rem solid black;
+
+}
+
+.low {
+    background-color: white;
+    height: 50vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: height 2s ease, border-top 2s ease;
+    z-index: 2;
+    border-top: 0.5rem solid black;
+}
+
+#copyright{
+    font-size: 0.8rem;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    bottom: -2vh;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: white;
+    border: 0.5rem solid black;
+    height: 6rem;
+    width: 6rem;
+    transform: translate(-50%, -60%);
+    position: relative;
+    left: 50%;
+    z-index: 3;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.panel{
+    border-radius: 5%;
+    height: 60vh;
+    width: 60vw;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: rgba(219, 214, 214, 1);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+#logo{
+    transform: translateY(-50%);
+    height: 12vh;
+    background-color: red;
+    position:relative;
+    top: 50%;
+    left: 4vw;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+
+
+.header.active {
+    height: 15vh;
+    
+}
+
+.low.active {
+    height: 10vh;
+    border-top: 0.1rem solid black;
+}
+
+#logo.active {
+    opacity: 100;
+}
+
+#copyright.active {
+    opacity: 100;
+}
+
+@media screen and (max-width: 768px) {
+    #copyright {
+        font-size: 0.6rem; 
+        bottom: -1vh;
+    }
+    #logo {
+        height: 8vh;
+    }
+    .panel{
+        width: 90vw;
+    }
+}
