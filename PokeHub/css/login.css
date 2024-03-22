@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235,235,235);
+}
+
+/* CSS del LOG IN */
+
+.panel{
+    background-color: rgb(157,153,153);
+    border-radius: 5%;
+    width: 80vw;
+    height: 60vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.panel h1 {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.form-group{
+    padding: 1vh;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 1vh;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+
+p{
+    padding:5vh
+}
+
+a{
+    color:red;
+}
