@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(217,217,217);
+    display: flex;
+    flex-direction: column;
+}
+
+.head{
+    display: flex;
+    flex-direction: row;
+}
+
+.picture{
+    background-color: white;
+    height: 40vw;
+    width: 40vw;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vw;
+}
+.picture img{
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pair{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    
+}
