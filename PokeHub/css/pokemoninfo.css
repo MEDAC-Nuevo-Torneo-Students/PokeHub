@@ -1,26 +1,38 @@
 body {
     margin: 0;
     padding: 0;
+}
+
+.menu-pokeinfo{
+    font-family: "Poppins", sans-serif;
+    color:black;
+    position:absolute;
+    left: 0;
+    top: 0;
+    margin-top: 150px;
+    width: 20vw;
     background-color: rgb(217,217,217);
     display: flex;
     flex-direction: column;
     font-family:'Roboto', sans-serif;
+    align-items: center;
 }
 
 .head{
     display: flex;
     flex-direction: row;
+    margin: 1vw;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .frame{
     background-color: white;
-    height: 25vh;
-    width: 25vh;
+    height: 18vh;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3vw;
     border-top:grey solid;
 }
 .frame img{
@@ -29,8 +41,6 @@ body {
 }
 
 .info{
-    width:100%;
-    margin-right: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -49,21 +59,38 @@ body {
 }
 
 .types img{
-    height: 5vh;
+    height: 2vh;
 }
 
-#stats{
-    width: 94vw;
-    height: 94vw;
-    justify-content: space-evenly;
+#stats {
+    width: 93%;
+    padding-top: 5vh;
 }
 
-#stats h2{
+#stats h3 {
     position: fixed;
-    top: 30vh;
-    left: 3vh;
+    top: 45vh;
+    left: 4vh;
 }
 
-#stats div{
-    margin:5px;
+table {
+    width: 100%;
 }
+
+th, td {
+    padding-left: 1.3vw;
+    text-align: left;
+}
+
+button{
+    border: transparent;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    margin: 1vh;
+    padding: 2vh;
+    height: 5vh;
+    font-weight:bolder;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
