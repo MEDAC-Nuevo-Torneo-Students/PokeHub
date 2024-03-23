@@ -1,0 +1,155 @@
+/* Fuente */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+
+
+.menu-chat{
+    font-family: "Poppins", sans-serif;
+    color:black;
+    position:absolute;
+    right: 0;
+    top: 0;
+    margin-top: 500px;
+    width: 20vw;
+
+}
+
+
+.messages{
+    text-align: center;
+    align-items: center;
+    margin: 4%;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;  
+    margin-left: 10%;
+}
+
+.box-message{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-left: -5%;
+    margin-top: 5%;
+}
+
+.circle-noti{
+    background-color: red; 
+    border-radius: 50%; 
+    width: 2vh; 
+    height: 2vh; 
+    z-index: 2;
+    left: 0px; 
+    top: 50%; 
+    text-align: center;
+    margin-left: 85%;
+    position: relative;
+    text-align: center;
+    align-items: center
+}
+.circle-noti p{
+    text-align: center;
+    align-items: center;
+    transform: translateY(-10%);
+}
+
+
+
+
+.box-message i{
+    right: 10px;
+    top: 50%;
+    transform: translateY(-40%);
+    font-size: 40px;
+    margin-top:4%;
+    margin-left: 5rem;
+    color: #000000;
+    z-index: 1;
+
+
+}
+
+.users{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+    display: flex;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: white;
+    border-radius: 12px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.users .user_shadow { 
+    background-color: lightgray; 
+    border-radius: 50%; 
+    width: 3vh; 
+    height: 3vh; 
+    z-index:1;
+    left: 0px; 
+    top: 50%; 
+    text-align: center;
+}
+
+.users i{
+    margin-left: 0;
+    z-index: 2;
+    height: 10px;
+    left: 20px;
+    transform: translateY(30%);
+
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.users #user{
+    font-size: 10px;
+}
+
+.users #description{
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.icon-arrow i{
+    transform: translateX(-3%);
+    font-size: 40px;  
+}
+
+.circle-shadow{
+    background-color: #979797; 
+    border-radius: 50%; 
+    width: 4vh; 
+    height:4vh; 
+    z-index: 2;
+    left: 0px;  
+    margin-left: 50%;
+    margin-top: 5%;
+
+}
+.cirlce-arrow{
+
+    background-color: red; 
+    border-radius: 50%; 
+    width: 1vh; 
+    height: 1vh; 
+    z-index: 2;
+    left: 0px;  
+    margin-left: 50%;
+    text-align: center;
+    align-items: center;
+    transform: translateY(-460%);
+    margin-left: 70%;
+}
+
