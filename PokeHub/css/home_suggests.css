@@ -20,6 +20,7 @@
     margin-top: 150px;
     width: 20vw;
     background-color: #D9D9D9;
+    height: 50%;
 
 }
 
@@ -135,7 +136,13 @@
     cursor: pointer;
     
 }
-
+.line-down{
+    border-bottom: 1px solid black;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 3%;
+    
+}
 #more:hover{
     color: red;
 }
