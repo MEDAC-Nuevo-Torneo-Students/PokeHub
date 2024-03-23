@@ -4,33 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/header_abierto.css">
     <link rel="stylesheet" href="/css/footer_abierto.css">
+    <link rel="stylesheet" href="/css/home_suggests.css">
 </head>
 <body>
     <header>
         <div id="header-container"></div>
-        <script>
-            fetch('/html/header.html')
-            .then(response => response.text())
-            .then(html => {
-            document.getElementById('header-container').innerHTML = html;
-            });
-        </script>
     </header>
     <main>
+            <div id="suggests">
+                <script src="/jscript/load_suggest.js"></script>
+            </div>
     </main>
     <footer>
         <div id="footer-container"></div>
-        <script>
-            fetch('/html/footer.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('footer-container').innerHTML = html;
-                });
-        </script>
     </footer>
-    <script src="/jscript/script.js"></script>
+    <script src="/jscript/pokebal_animation.js"></script>
+    <script src="/jscript/load_header.js"></script>
+    <script src="/jscript/load_footer.js"></script>
+    
+
 </body>
 </html>
