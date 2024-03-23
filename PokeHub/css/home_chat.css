@@ -3,7 +3,9 @@
 
 
 
-
+.body{
+    background-color: #D9D9D9;
+}
 .menu-chat{
     font-family: "Poppins", sans-serif;
     color:black;
@@ -12,7 +14,9 @@
     top: 0;
     margin-top: 500px;
     width: 20vw;
-
+    background-color: #D9D9D9;
+    height: 70%; /*Pablo arregla esto*/
+    
 }
 
 
@@ -39,7 +43,7 @@
     border-radius: 50%; 
     width: 2vh; 
     height: 2vh; 
-    z-index: 2;
+    z-index: 1;
     left: 0px; 
     top: 50%; 
     text-align: center;
