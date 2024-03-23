@@ -138,3 +138,10 @@ button{
 button:active{
     box-shadow: none;
 }
+
+#ivPlus{
+    color:red;
+}
+#ivMinus{
+    color:blue;
+}
