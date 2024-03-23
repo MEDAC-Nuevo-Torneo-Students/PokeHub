@@ -22,10 +22,10 @@
 
 
 .search input{
+    display: flex;
     align-items: center;
     text-align: center;
-    margin-left: 0px;
-    margin-right: 10px;
+    margin-left: 10px;
     color: #9F9F9F;
     border: 1px solid transparent;
     display: flex;
@@ -38,6 +38,7 @@
     cursor: pointer;
     padding: 8px;
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    
 
     
 }
@@ -46,7 +47,7 @@
 .search i{
 
     position: absolute;
-    right: 20px;
+    right: 25px;
     top: 50%;
     transform: translateY(-40%);
     font-size: 20px;
