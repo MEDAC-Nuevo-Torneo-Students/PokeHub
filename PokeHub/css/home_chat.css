@@ -1,8 +1,10 @@
 /* Fuente */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-*{
+body{
     font-family: "Poppins", sans-serif;
-
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center; 
 }
 
 .search{
@@ -11,24 +13,17 @@
 }
 
 .menu-expanded{
-    background-color: #D9D9D9;
+    
     color:black;
     position:fixed;
-    height:100vh;
-    right:0;
-    top:0;
-    width: 20vw;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-    margin-left: 4vw;
-    
+
 }
 
 
 .search input{
     align-items: center;
     text-align: center;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 10px;
     color: #9F9F9F;
     border: 1px solid transparent;
@@ -74,8 +69,8 @@
 }
 
 .users{
-     
-    text-align: center;
+    display: flex;
+    flex-direction: row;
     margin-left: 10px;
     margin-right: 10px;
     color: black;
@@ -94,11 +89,12 @@
 .users .circle { 
     background-color: lightgray; 
     border-radius: 50%; 
-    width: 30px; 
-    height: 30px; 
+    width: 3vh; 
+    height: 3vh; 
     z-index:1;
     left: 0px; 
     top: 50%; 
+    text-align: center;
 }
 
 .users i{
@@ -108,12 +104,14 @@
     left: 20px;
 
 }
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
 .users #user{
     font-size: 10px;
-    margin-top: vh;
-
-
-
 }
 
 .users #description{
