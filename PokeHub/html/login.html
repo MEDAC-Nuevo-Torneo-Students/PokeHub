@@ -5,21 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/header_cerrado.css">
-    <link rel="stylesheet" href="/css/footer_cerrado.css">
     <link rel="stylesheet" href="/css/login.css">
 
 </head>
 <body>
     <header>
         <div id="header-container"></div>
-        <script>
-            fetch('/html/header.html')
-            .then(response => response.text())
-            .then(html => {
-            document.getElementById('header-container').innerHTML = html;
-            });
-        </script>
     </header>
     <main>
         <div class="wrapper">
@@ -44,7 +35,7 @@
 
                 <div class="register-link">
                     <p> Don't have an account?
-                    <a href="#">Register</a>
+                    <a href="#" id="register_link">Register</a>
                     </p>
                 </div>
             </form>
@@ -52,14 +43,6 @@
     </main>
     <footer>
         <div id="footer-container"></div>
-        <script>
-            fetch('/html/footer.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('footer-container').innerHTML = html;
-                });
-        </script> 
     </footer>
-    <script src="/jscript/script.js"></script>
 </body>
 </html>
