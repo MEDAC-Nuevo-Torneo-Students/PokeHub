@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+#feed {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+}
+
+
+.feed_box {
+    
+    background: #D9D9D9;
+    padding-left: 10;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+
+.pokemon_imgs {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+
+.frame{
+    margin-top: 0; /* Eliminar el margen */
+    margin: 1vh;
+    background-color: white;
+    height: 6vh;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+    inset 0px -4px 6px rgba(0, 0, 0, 0.1), /* Sombra hacia arriba */
+    inset 0px 4px 6px rgba(0, 0, 0, 0.4); /* Sombra interna */
+}
+
+
+.pokemon_imgs img {
+    width:3rem;
+    padding: 5px;
+}
+
+.feedText {
+    display: flex;
+    position: relative;
+    font-weight: 600;
+}
+
+.teamName {
+    padding-left: 20px;
+}
+
+.username {
+    position: absolute;
+    right: 0;
+    padding-right: 15px;
+}
+
+.feed_box button {
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    padding: 3px 15px;
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px; 
+    font-weight: 600;
+    cursor: pointer;
+}
