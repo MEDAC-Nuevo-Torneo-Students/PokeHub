@@ -54,6 +54,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding:15px;
+    padding-right: 15px;
+    padding-left: 10px;
 }
 
 .types{
@@ -120,6 +122,9 @@ li img{
 
 #normal{
     background-color: #A6A5A5;
+}
+li{
+    display: flex;
 }
 
 button{
