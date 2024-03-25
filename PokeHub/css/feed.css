@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+#feed {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    
+}
+
+
+.feed_box {
+    
+    background: #D9D9D9;
+    padding-left: 10;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+
+.pokemon_imgs {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+
+.frame{
+    margin-top: 0; /* Eliminar el margen */
+    margin: 1vh;
+    background-color: white;
+    height: 6vh;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+
+.frame:hover {
+    background:rgba(253, 0, 0, 0.11); /* Cambiar el color de fondo en el hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); /* Aumentar la profundidad de la sombra en el hover */
+}
+
+.frame:active, .frame.clicked {
+    box-shadow: 
+    inset 0px -4px 6px rgba(0, 0, 0, 0.1), 
+    inset 0px 4px 6px rgba(0, 0, 0, 0.4); 
+    background:rgba(253, 0, 0, 0.11);
+    transform: translateY(3px); 
+}
+
+
+
+.pokemon_imgs img {
+    width:4rem;
+    padding: 5px;
+}
+
+.feedText {
+    display: flex;
+    position: relative;
+    font-weight: 600;
+}
+
+.teamName {
+    padding-left: 20px;
+}
+
+.username {
+    position: absolute;
+    right: 0;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+
+.botton_row button {
+    color: white;
+    background-color: #d60a0a;
+    border: none;
+    border-radius: 10px;
+    position: absolute; 
+    bottom: 15px; 
+    right: 10px; 
+    font-weight: 600;
+    cursor: pointer;
+    height: 1.5rem;
+    width: 5rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feed_box button:active {
+    background-color: #b30000; 
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
+
+
+.botton_row {
+    display: flex;
+    position: relative;
+}
+
+.interactions {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 30%;
+    border-radius: 40px;
+    height: 30px;
+    margin: -35px 10px 15px 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.interactions div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    padding: 0px 10px;
+}
+
+.interactions div p {
+    padding-left: 3px;
+}
+
+.likes i:hover {
+    color: #b30000; 
+    cursor: pointer;
+}
+
+.shared i:hover {
+    color: #28a745;
+    cursor: pointer;
+}
+
+.comments i:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.feed_selector {
+    display: flex;
+}
+
+.feed_selector button {
+    position: fixed;
+    border: none;
+    height: 3rem;
+    width: 10rem;
+    background: #D9D9D9;
+    padding-left: 10;
+    border-radius: 10px;
+    margin: 20px 180px;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.feed_selector button:active {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
+
+#post button {
+    border: none;
+    background-color: #d60a0a;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 2.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    position: fixed;    
+    right: calc(50% - 400px);
+    
+}
+
+#post button:active {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
