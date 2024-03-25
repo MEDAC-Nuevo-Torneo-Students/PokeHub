@@ -1,8 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
 
 body {
     margin: 0;
     padding: 0;
     background-color: #F4EAEA;
+    overflow: hidden;
+}
+
+/* Estilos para el grid */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tres columnas responsivas */
+
 }
 
 
+
+/* Estilos específicos para algunos items */
+#pokeinfo-container {
+    grid-column: span 1; /* Ocupa una columna */
+}
+
+#feed-container {
+    grid-column: span 2; /* Ocupa dos columnas */
+}
+
+#suggests-container {
+    grid-column: span 1; /* Ocupa una columna */
+}
+
+#chat-container {
+    grid-column: span 1; /* Ocupa una columna */
+}
+
+
+/* Ajustes para diseño responsivo */
+@media screen and (max-width: 1450px) {
+    #pokeinfo-container, #suggests-container, #chat-container {
+        visibility: hidden;
+    }
+
+}
