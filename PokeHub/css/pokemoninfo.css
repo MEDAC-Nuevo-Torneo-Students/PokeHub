@@ -87,7 +87,7 @@ th, td {
     width: 19vw;
     border-radius: 10px;
     height: 4vh;
-    border-top:white solid;
+    border-top: rgb(255, 255, 255, 0.4) solid;
     margin: 0.5vh
 }
 
