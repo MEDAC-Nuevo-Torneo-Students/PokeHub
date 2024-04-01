@@ -105,6 +105,7 @@ html {
     bottom: 1.3rem; 
     right: 1rem; 
     font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     height: 1.5rem;
     width: 5rem;
@@ -225,7 +226,7 @@ html {
     }
 
     .feed_selector {
-      margin-top: 3rem;
+        margin-top: 3rem;
     }
 
     #feed {
@@ -233,6 +234,17 @@ html {
     }
     
     html {
-        font-size: 50%; /* Ajusta el tamaño del texto al 50% */
+        font-size: 50%; 
     }
+
+    #post button {
+
+        border-radius: 4px;
+    }
+
+    #feed {
+        
+    }
+
+
 } 
