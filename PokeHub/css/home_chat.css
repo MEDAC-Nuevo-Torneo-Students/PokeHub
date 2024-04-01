@@ -123,16 +123,12 @@
 }
 
 .icon-arrow i{
-    transform: translateX(-3%);
     font-size: 40px;  
     cursor: pointer;
-   
 }
 
 .icon-arrow i:active{
-    
-    
-    transform: translateY(2px); 
+    transform: translateY(5px); 
 }
 
 .circle-shadow{
