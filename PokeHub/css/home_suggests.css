@@ -18,10 +18,10 @@
     position:absolute;
     right: 0;
     top: 0;
-    margin-top: 150px;
-    width: 20vw;
+    margin-top: 9rem;
+    width: 23.4rem;
     background-color: #D9D9D9;
-    height: 50%;
+    height: 22.5rem;
 
 }
 
@@ -30,19 +30,19 @@
     display: flex;
     align-items: center;
     text-align: center;
-    margin-left: 10px;
+    margin-left: 0.7rem;
     color: #9F9F9F;
-    border: 1px solid transparent;
+    border: 0.1rem solid transparent;
     display: flex;
     margin-top: 2vh;
     margin-bottom: 1vh;
     background-color: white;
-    border-radius: 15px;
-    height: 20px;
-    width: 90%;
+    border-radius: 1rem;
+    height: 1rem;
+    width: 21.1rem;
     cursor: pointer;
     padding: 8px;
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
     cursor: text;
     
 
@@ -53,10 +53,10 @@
 .search i{
 
     position: absolute;
-    right: 25px;
-    top: 50%;
+    right: 1.3rem;
+    top: 1rem;
     transform: translateY(-40%);
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #000000;
     cursor: pointer;
 
@@ -66,17 +66,16 @@
 
 
 .line{
-    margin-top:1vh;
     border-bottom: 1px solid black;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 0.9rem;
+    margin-right: 1.3vw;
 }
 
 .user-know{
     text-align: center;
     align-items: center;
-    margin: 4%;
-    font-size: 12px;
+    margin: 0.4rem;
+    font-size: 0.7rem;
     font-family: "Poppins", sans-serif;
 }
 
