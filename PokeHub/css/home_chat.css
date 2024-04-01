@@ -125,6 +125,14 @@
 .icon-arrow i{
     transform: translateX(-3%);
     font-size: 40px;  
+    cursor: pointer;
+   
+}
+
+.icon-arrow i:active{
+    
+    
+    transform: translateY(2px); 
 }
 
 .circle-shadow{
@@ -151,5 +159,9 @@
     align-items: center;
     transform: translateY(-460%);
     margin-left: 70%;
+    
 }
+
+
+
 

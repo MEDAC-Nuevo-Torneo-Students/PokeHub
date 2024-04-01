@@ -9,6 +9,7 @@
 .search{
 
     position: relative;
+    
 }
 
 .menu-expanded{
@@ -42,6 +43,7 @@
     cursor: pointer;
     padding: 8px;
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    cursor: text;
     
 
     
@@ -56,8 +58,12 @@
     transform: translateY(-40%);
     font-size: 20px;
     color: #000000;
+    cursor: pointer;
 
 }
+
+
+
 
 .line{
     margin-top:1vh;
