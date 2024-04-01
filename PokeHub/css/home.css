@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+    background-color: #F4EAEA;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+
+}
+
+
+
+#pokeinfo-container {
+    grid-column: span 1; 
+    min-height: 100vh; 
+    position: fixed;
+    top: 0;
+
+    
+}
+
+#feed-container {
+    grid-column: span 2; 
+    min-height: 100vh;
+    margin-bottom: 20rem;
+}
+
+#suggests-container {
+    grid-column: span 0.5; 
+    position: fixed;
+    top: 0;
+    min-height: 50vh;
+    right: 0;
+}
+
+#chat-container {
+    grid-column: span 0.5; 
+    position: fixed;
+    top: 0;
+    min-height: 50vh;
+    right: 0;
+
+}
+
+#pokeinfo-container,
+#suggests-container {
+    height: 100vh; 
+}
+
+#chat-container {
+    
+    min-height: 100vh; 
+}
+
+
+.scrollable {
+    max-height: 100vh; 
+    overflow-y: auto; 
+}
+
+
+/* Ajustes para diseño responsivo 
+@media screen and (max-width: 750px) {
+    #pokeinfo-container, #suggests-container, #chat-container {
+        visibility: hidden;
+    }
+
+} */
