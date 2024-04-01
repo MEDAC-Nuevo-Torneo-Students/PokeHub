@@ -90,7 +90,7 @@
     margin-bottom: 1vh;
     background-color: white;
     border-radius: 12px;
-    height: 1..4rem;
+    height: 1.4rem;
     cursor: pointer;
     padding: 8px;
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
@@ -111,7 +111,7 @@
 .users i{
     margin-left: 0;
     z-index: 2;
-    height: 10px;
+    height: 0rem;
     left: 20px;
     transform: translateY(30%);
 
