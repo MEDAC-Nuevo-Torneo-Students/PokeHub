@@ -137,6 +137,7 @@ li{
 
 .import button:active{
     box-shadow: none;
+    transform: translateY(2px)
 }
 
 #ivPlus{
