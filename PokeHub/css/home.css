@@ -74,10 +74,12 @@ main {
 /* Ajustes para diseño responsivo */
 @media screen and (max-width: 768px) {
     #pokeinfo-container, #suggests-container, #chat-container {
-        visibility: hidden;
+        display: none; /* Oculta los contenedores en pantallas más pequeñas */
+    }
+    
+    #feed-container {
+        grid-column: span 1; /* Feed ocupa toda la fila en pantallas pequeñas */
     }
 
     
-
-
-} 
+}

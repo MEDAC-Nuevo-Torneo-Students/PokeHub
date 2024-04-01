@@ -224,5 +224,15 @@ html {
         right: 1rem;
     }
 
+    .feed_selector {
+      margin-top: 3rem;
+    }
+
+    #feed {
+        margin-top: 12rem;
+    }
     
+    html {
+        font-size: 50%; /* Ajusta el tamaño del texto al 50% */
+    }
 } 
