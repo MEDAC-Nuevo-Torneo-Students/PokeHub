@@ -21,6 +21,7 @@ main {
 #pokeinfo-container {
     grid-column: span 1; 
     min-height: 100vh; 
+    max-width: 33%;
     position: fixed;
     top: 0;
     z-index: 6;
@@ -71,3 +72,12 @@ main {
 
 
 /* Ajustes para diseño responsivo */
+@media screen and (max-width: 768px) {
+    #pokeinfo-container, #suggests-container, #chat-container {
+        visibility: hidden;
+    }
+
+    
+
+
+} 

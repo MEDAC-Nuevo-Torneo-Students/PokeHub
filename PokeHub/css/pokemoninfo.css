@@ -5,8 +5,9 @@
     position:absolute;
     left: 0;
     top: 0;
-    margin-top: 150px;
+    margin-top: 9rem;
     width: 30rem;
+    padding-bottom: 3rem;
     background-color: rgb(217,217,217);
     display: flex;
     flex-direction: column;
@@ -145,4 +146,8 @@ li{
 }
 #ivMinus{
     color:blue;
+}
+
+.menu-pokeinfo h2 {
+    margin-top: 2rem;
 }
