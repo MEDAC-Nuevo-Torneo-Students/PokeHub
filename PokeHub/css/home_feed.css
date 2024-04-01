@@ -182,7 +182,7 @@ html {
     width: 10rem;
     background: #D9D9D9;
     border-radius: 10px;
-    margin: 2rem 10rem;
+    margin: 2rem 5rem;
     position: relative;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
     cursor: pointer;
@@ -242,9 +242,10 @@ html {
         border-radius: 4px;
     }
 
-    #feed {
-        
+    .pokeframe {
+        border-radius: 8px;
     }
+
 
 
 } 
