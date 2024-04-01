@@ -2,7 +2,7 @@
 
 .low {
     background-color: white;
-    height: 10vh;
+    height: 2rem;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -16,7 +16,7 @@
     background-color: white;
     position: fixed;
     left: 50%;
-    bottom: -2vh;
+    bottom: 0;
     transform: translate(-50%, -50%);
     opacity: 100;
     transition: opacity 2s ease;

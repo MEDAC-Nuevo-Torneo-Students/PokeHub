@@ -23,6 +23,7 @@ main {
     min-height: 100vh; 
     position: fixed;
     top: 0;
+    z-index: 6;
 
     
 }
@@ -39,6 +40,7 @@ main {
     top: 0;
     min-height: 50vh;
     right: 0;
+    z-index: 6;
 }
 
 #chat-container {
@@ -47,6 +49,7 @@ main {
     top: 0;
     min-height: 50vh;
     right: 0;
+    z-index: 6;
 
 }
 
@@ -67,10 +70,4 @@ main {
 }
 
 
-/* Ajustes para diseño responsivo 
-@media screen and (max-width: 750px) {
-    #pokeinfo-container, #suggests-container, #chat-container {
-        visibility: hidden;
-    }
-
-} */
+/* Ajustes para diseño responsivo */
