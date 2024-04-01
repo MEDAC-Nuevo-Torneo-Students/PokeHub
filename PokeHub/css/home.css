@@ -67,10 +67,10 @@ main {
 }
 
 
-/* Ajustes para diseño responsivo */
-@media screen and (max-width: 1450px) {
+/* Ajustes para diseño responsivo 
+@media screen and (max-width: 750px) {
     #pokeinfo-container, #suggests-container, #chat-container {
         visibility: hidden;
     }
 
-}
+} */
