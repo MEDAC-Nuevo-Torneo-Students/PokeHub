@@ -22,6 +22,7 @@ setTimeout(function() {
                     .then(data => {
                         // Obtener el nombre del Pokémon
                         const pokemonName = data.name;
+                        // Obtener la foto del Pokémon
                         const pokemonImage = data.sprites.front_default;
 
                         

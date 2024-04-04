@@ -25,9 +25,8 @@ main {
     position: fixed;
     top: 0;
     z-index: 6;
-
-    
 }
+
 
 #feed-container {
     grid-column: span 2; 
