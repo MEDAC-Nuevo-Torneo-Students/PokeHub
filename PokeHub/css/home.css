@@ -28,11 +28,14 @@ main {
 }
 
 
-#feed-container {
+.footer-movil-container{
     grid-column: span 2; 
     min-height: 100vh;
     margin-bottom: 20rem;
 }
+
+
+
 
 #suggests-container {
     grid-column: span 0.5; 
