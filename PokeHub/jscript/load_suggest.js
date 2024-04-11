@@ -8,6 +8,6 @@ fetch('/html/home_suggests.html')
         // Obtener el contenido dentro de la etiqueta <main>
         const mainContent = tempElement.querySelector('main').innerHTML;
         
-        // Insertar el contenido dentro de la etiqueta <main> en el elemento con ID 'footer-container'
+        // Insertar el contenido dentro de la etiqueta <main> en el elemento con ID 'suggests-container'
         document.getElementById('suggests-container').innerHTML = mainContent;
     });
