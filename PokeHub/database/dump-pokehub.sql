@@ -32,7 +32,7 @@ CREATE TABLE `comment` (
   KEY `id_user` (`id_user`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `post` (`id`),
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user_info` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (1,1,1,'Equipo chulo');
+INSERT INTO `comment` VALUES (4,1,1,'equipo chulo'),(5,1,1,'equipo muy chulo'),(6,1,1,'equipo muy chulo 3'),(7,2,3,'Vaya equipo pocho'),(8,3,3,'Me gusta este equipo'),(9,3,1,'Mola el tercer Pokemon'),(10,3,2,'Pero tio');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `pokemon_build` (
   CONSTRAINT `pokemon_build_chk_7` CHECK (((`spe_ivs` >= 0) and (`spe_ivs` <= 31))),
   CONSTRAINT `pokemon_build_chk_8` CHECK (((`hp_evs` >= 0) and (`hp_evs` <= 252))),
   CONSTRAINT `pokemon_build_chk_9` CHECK (((`atk_evs` >= 0) and (`atk_evs` <= 252)))
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `pokemon_build` (
 
 LOCK TABLES `pokemon_build` WRITE;
 /*!40000 ALTER TABLE `pokemon_build` DISABLE KEYS */;
-INSERT INTO `pokemon_build` VALUES (1,260,'male',3,793,16,127,89,8,182,31,31,31,31,31,31,4,252,0,0,0,252),(2,279,'female',2,262,5,503,89,366,182,31,31,31,31,31,31,252,0,4,0,0,252),(3,598,'male',1,583,12,73,334,442,182,31,31,31,31,31,0,0,4,252,0,252,0),(4,796,'unknown',1,274,5,87,521,412,605,31,0,31,31,31,31,4,0,0,252,0,252),(5,10021,'unknown',1,247,9,89,157,12,182,31,31,31,31,31,31,4,252,0,0,0,252),(6,237,'female',1,252,7,252,370,270,197,31,31,31,31,31,31,4,252,0,0,0,252);
+INSERT INTO `pokemon_build` VALUES (1,260,'male',3,793,16,127,89,8,182,31,31,31,31,31,31,4,252,0,0,0,252),(2,279,'female',2,262,5,503,89,366,182,31,31,31,31,31,31,252,0,4,0,0,252),(3,598,'male',1,583,12,73,334,442,182,31,31,31,31,31,0,0,4,252,0,252,0),(4,796,'unknown',1,274,5,87,521,412,605,31,0,31,31,31,31,4,0,0,252,0,252),(5,10021,'unknown',1,247,9,89,157,12,182,31,31,31,31,31,31,4,252,0,0,0,252),(6,237,'female',1,252,7,252,370,270,197,31,31,31,31,31,31,4,252,0,0,0,252),(7,144,'unknown',3,274,3,59,58,573,329,31,0,31,31,31,31,252,0,44,196,4,12),(8,10104,'female',3,246,5,59,585,694,270,31,1,31,31,31,31,84,0,132,84,4,204),(9,10230,'male',1,197,11,394,157,457,245,31,31,31,31,31,31,52,212,4,0,4,236),(10,10270,'female',1,2106,16,904,532,266,596,31,31,31,20,31,31,236,12,52,0,4,204),(11,645,'male',3,247,5,414,188,164,182,31,0,31,31,31,31,84,0,52,124,4,252),(12,1021,'male',1,683,3,527,434,909,555,31,20,31,31,31,31,244,0,60,100,20,84);
 /*!40000 ALTER TABLE `pokemon_build` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +117,7 @@ CREATE TABLE `post` (
   PRIMARY KEY (`id`),
   KEY `id_team` (`id_team`),
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_team`) REFERENCES `team` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,2,'2024-04-05 00:00:00',25);
+INSERT INTO `post` VALUES (1,2,'2024-04-05 00:00:00',25),(2,3,'2024-04-22 10:34:53',86),(3,4,'2024-01-12 12:17:26',12);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,7 +163,7 @@ CREATE TABLE `team` (
   CONSTRAINT `team_ibfk_5` FOREIGN KEY (`id_Pokemon5_build`) REFERENCES `pokemon_build` (`id`),
   CONSTRAINT `team_ibfk_6` FOREIGN KEY (`id_Pokemon6_build`) REFERENCES `pokemon_build` (`id`),
   CONSTRAINT `team_ibfk_7` FOREIGN KEY (`id_user`) REFERENCES `user_info` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +172,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (2,1,'M-Swampert Rain Team',1,2,3,4,5,6,'Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.');
+INSERT INTO `team` VALUES (2,1,'M-Swampert Rain Team',1,2,3,4,5,6,'Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.'),(3,2,'Utretch Winnig Team',7,8,9,10,11,12,'I don\'t really understand how or why, but somehow I managed to go 8-1 (16-3 in individual games) in D1 and ultimately finish in top 32 in EUIC last weekend with this abomination of a team. A little background story provided in the replies :D'),(4,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete');
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +192,7 @@ CREATE TABLE `user_info` (
   `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (1,'Jjrajjr','jjrajjr@gmail.com','contrasenaSegura0','Jugador competitivo bla bla bla...',1);
+INSERT INTO `user_info` VALUES (1,'Jjrajjr','jjrajjr@gmail.com','contrasenaSegura0','Jugador competitivo bla bla bla...',1),(2,'Albertito','albertito@gmail.com','contrasenasegura1','aksjdbsadonafsjn',1),(3,'Reax','reax@gmail.com','contrasenasegura2','dohsfnskhfdns',1);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-05 12:53:01
+-- Dump completed on 2024-04-11 12:35:27
