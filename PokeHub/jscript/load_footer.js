@@ -1,13 +1,13 @@
 fetch('/html/footer.html')
     .then(response => response.text())
     .then(html => {
-        // Crear un elemento temporal para contener el HTML y extraer el contenido del main
+        // Create a temporary element to contain the HTML and extract the content of the main tag
         const tempElement = document.createElement('div');
         tempElement.innerHTML = html;
         
-        // Obtener el contenido dentro de la etiqueta <main>
+        // Get the content inside the <main> tag
         const mainContent = tempElement.querySelector('main').innerHTML;
         
-        // Insertar el contenido dentro de la etiqueta <main> en el elemento con ID 'footer-container'
+        // Insert the content inside the <main> tag into the element with ID 'footer-container'
         document.getElementById('footer-container').innerHTML = mainContent;
     });

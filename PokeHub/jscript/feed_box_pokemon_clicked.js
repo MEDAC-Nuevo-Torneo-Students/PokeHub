@@ -1,40 +1,38 @@
 setTimeout(function() {
-    // Selecciona todos los elementos con la clase "pokeframe" y agrega un evento de clic a cada uno
+    // Select all elements with the class "pokeframe" and add a click event to each one
     document.querySelectorAll(".pokeframe").forEach(function(element) {
         element.addEventListener("click", function() {
-            // Si el elemento clicado ya tiene la clase "clicked", la eliminamos; de lo contrario, la añadimos
+            // If the clicked element already has the "clicked" class, remove it; otherwise, add it
             if (this.classList.contains("clicked")) {
                 this.classList.remove("clicked");
             } else {
-                // Remueve la clase "clicked" de todos los elementos con la clase "pokeframe"
+                // Remove the "clicked" class from all elements with the class "pokeframe"
                 document.querySelectorAll(".pokeframe").forEach(function(el) {
                     el.classList.remove("clicked");
                 });
-                // Añade la clase "clicked" solo al elemento clicado
+                // Add the "clicked" class only to the clicked element
                 this.classList.add("clicked");
 
-                // Obtener el poke-id del atributo personalizado poke-id
+                // Get the poke-id from the custom attribute poke-id
                 const pokeId = this.getAttribute('poke-id');
 
-                // Hacer la solicitud a la API de PokeAPI
+                // Make the request to the PokeAPI
                 fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
                     .then(response => response.json())
                     .then(data => {
-                        // Obtener el nombre del Pokémon
+                        // Get the name of the Pokémon
                         const pokemonName = data.name;
-                        // Obtener la foto del Pokémon
+                        // Get the Pokémon's image
                         const pokemonImage = data.sprites.front_default;
 
-                        
-
-                        // Insertar el nombre del Pokémon en el elemento h2 con id "pokemonName"
+                        // Insert the Pokémon's name into the h2 element with id "pokemonName"
                         document.getElementById("pokemonName").innerText = pokemonName;
 
-                        // Insertar la imagen del Pokémon en el elemento img con id "pokemonImage"
+                        // Insert the Pokémon's image into the img element with id "pokemonImage"
                         document.getElementById("pokemonImage").src = pokemonImage;
                     })
                     .catch(error => {
-                        console.error('Error al obtener datos de la API:', error);
+                        console.error('Error fetching data from the API:', error);
                     });
             }
         });
