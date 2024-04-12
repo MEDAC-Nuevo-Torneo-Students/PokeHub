@@ -21,16 +21,14 @@ main {
 #pokeinfo-container {
     grid-column: span 1; 
     min-height: 100vh; 
+    max-width: 33%;
     position: fixed;
     top: 0;
-
-    
+    z-index: 6;
 }
 
-#feed-container {
-    grid-column: span 2; 
-    min-height: 100vh;
-    margin-bottom: 20rem;
+#footer-movil-container{
+    display: none;
 }
 
 #suggests-container {
@@ -39,6 +37,7 @@ main {
     top: 0;
     min-height: 50vh;
     right: 0;
+    z-index: 6;
 }
 
 #chat-container {
@@ -47,6 +46,7 @@ main {
     top: 0;
     min-height: 50vh;
     right: 0;
+    z-index: 6;
 
 }
 
@@ -67,10 +67,19 @@ main {
 }
 
 
-/* Ajustes para diseño responsivo 
-@media screen and (max-width: 750px) {
+/* Ajustes para diseño responsivo */
+@media screen and (max-width: 768px) {
     #pokeinfo-container, #suggests-container, #chat-container {
-        visibility: hidden;
+        display: none; /* Oculta los contenedores en pantallas más pequeñas */
+    }
+    
+    #feed-container {
+        grid-column: span 1; /* Feed ocupa toda la fila en pantallas pequeñas */
     }
 
-} */
+    #footer-movil-container {
+        display: flex; /* Mostrar footer en pantallas pequeñas */
+      }
+
+
+}

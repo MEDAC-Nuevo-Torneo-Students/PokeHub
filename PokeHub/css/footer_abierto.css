@@ -2,23 +2,23 @@
 
 .low {
     background-color: white;
-    height: 10vh;
+    height: 2rem;
     position: fixed;
     bottom: 0;
     width: 100%;
     transition: height 2s ease, border-top 2s ease;
-    z-index: 1;
+    z-index: 8;
     border-top: 0.1rem solid black;
 }
 
 #copyright{
     font-size: 0.8rem;
-    background-color: white;
     position: fixed;
     left: 50%;
-    bottom: -2vh;
+    bottom: 0;
     transform: translate(-50%, -50%);
     opacity: 100;
+    white-space: nowrap;
     transition: opacity 2s ease;
 }
 
@@ -33,7 +33,12 @@
 }
 @media screen and (max-width: 768px) {
     #copyright {
-        font-size: 0.6rem; 
-        bottom: -1vh;
+        font-size: 0rem; 
+        bottom: 0vh;
+    }
+
+    .low {
+        height: 0rem;
+
     }
 }

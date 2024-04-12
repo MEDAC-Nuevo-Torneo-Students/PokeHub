@@ -1,9 +1,9 @@
 fetch('/html/header.html')
     .then(response => response.text())
     .then(html => {
-        // Agregar un retraso de 500ms para asegurarnos de que el contenido dinámico se haya cargado completamente
+        // Add a delay of 500ms to ensure that the dynamic content is fully loaded
         setTimeout(() => {
-            // Ahora que ha pasado el tiempo de espera, podemos acceder al elemento circle y agregar el event listener
+            // Now that the waiting time has passed, we can access the circle element and add the event listener
             const circleElement = document.getElementById('circle');
             circleElement.addEventListener("click", function() {
                 document.querySelector('#header').classList.toggle("active");
@@ -11,5 +11,5 @@ fetch('/html/header.html')
                 document.querySelector('#logo').classList.toggle("active");
                 document.querySelector('#copyright').classList.toggle("active");
             });
-        }, 500); // Tiempo de espera en milisegundos
+        }, 500); // Waiting time in milliseconds
     });

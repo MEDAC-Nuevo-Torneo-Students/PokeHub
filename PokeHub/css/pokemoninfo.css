@@ -5,8 +5,9 @@
     position:absolute;
     left: 0;
     top: 0;
-    margin-top: 150px;
-    width: 20vw;
+    margin-top: 9rem;
+    width: 30rem;
+    padding-bottom: 3rem;
     background-color: rgb(217,217,217);
     display: flex;
     flex-direction: column;
@@ -18,16 +19,15 @@
 .head{
     display: flex;
     flex-direction: row;
-    margin: 1vw;
+    margin: 1rem;
     justify-content: space-around;
-    width: 100%;
 }
 
 .frame{
-    width:95%;
-    margin: 1vh;
+
+    margin: 0.5rem;
     background-color: white;
-    height: 18vh;
+    height: 10rem;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
 }
 
 .info{
-    width:100%;
+    width:18rem;
     display: flex;
     flex-direction: column;
 }
@@ -49,9 +49,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding:15px;
-    padding-right: 15px;
-    padding-left: 10px;
+    padding:0.5rem;
 }
 
 .types{
@@ -65,6 +63,8 @@
 }
 
 #stats {
+    height: 12rem;
+    width: 28rem;
     display:flex;
     flex-direction: column;
     margin: 1vh;
@@ -80,7 +80,7 @@ th, td {
 }
 
 .move{
-    width: 19vw;
+    width: 28rem;
     border-radius: 10px;
     height: 4vh;
     border-top: rgb(255, 255, 255, 0.4) solid;
@@ -138,6 +138,7 @@ li{
 
 .import button:active{
     box-shadow: none;
+    transform: translateY(2px)
 }
 
 #ivPlus{
@@ -145,4 +146,12 @@ li{
 }
 #ivMinus{
     color:blue;
+}
+
+.menu-pokeinfo h2 {
+    margin-top: 2rem;
+}
+
+#pokemonName {
+    text-transform: capitalize;
 }

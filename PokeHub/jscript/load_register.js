@@ -2,17 +2,17 @@ document.getElementById('register_link').addEventListener('click', function() {
     fetch('/html/register.html')
         .then(response => response.text())
         .then(html => {
-            // Crear un elemento temporal para cargar el HTML
+            // Create a temporary element to load the HTML
             const temp = document.createElement('div');
             temp.innerHTML = html;
 
-            // Seleccionar el contenido deseado dentro del HTML cargado
+            // Select the desired content within the loaded HTML
             const newContent = temp.querySelector('main').innerHTML;
 
-            // Reemplazar el contenido actual de la etiqueta <main> con el contenido cargado
+            // Replace the current content of the <main> tag with the loaded content
             document.querySelector('main').innerHTML = newContent;
         })
         .catch(error => {
-            console.error('Error al cargar el contenido:', error);
+            console.error('Error loading content:', error);
         });
 });

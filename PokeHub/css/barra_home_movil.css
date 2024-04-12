@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-movil {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+
+.separator{
+  height: 24px;
+  width: 1px;
+  background-color: black;
+  
+
+}
+
+.home i{
+
+    font-size: large;
+    cursor: pointer;
+}
+
+.plus i{
+    font-size: large;
+    cursor: pointer;
+
+}
+
+.search-mobile i{
+
+    font-size: large;
+    cursor: pointer;
+}
+
+.message i{
+
+    font-size: large;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+    .footer-movil {
+      display: flex; /* Mostrar footer en pantallas pequeñas */
+     
+    }
+  }
