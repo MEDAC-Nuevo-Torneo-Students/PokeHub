@@ -2,7 +2,7 @@
 
 .low {
     background-color: white;
-    height: 0rem;
+    height: 2rem;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -13,7 +13,6 @@
 
 #copyright{
     font-size: 0.8rem;
-    background-color: white;
     position: fixed;
     left: 50%;
     bottom: 0;
@@ -34,7 +33,12 @@
 }
 @media screen and (max-width: 768px) {
     #copyright {
-        font-size: 0.6rem; 
-        bottom: -1vh;
+        font-size: 0rem; 
+        bottom: 0vh;
+    }
+
+    .low {
+        height: 0rem;
+
     }
 }
