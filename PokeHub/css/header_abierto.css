@@ -37,6 +37,34 @@
     transition: opacity 2s ease;
 }
 
+.icons-user{
+    margin-left: 182vh;
+    font-size: 60px;
+    margin-top: -7.75vh;
+    cursor: pointer;
+    opacity: 100;
+    transition: opacity 2s ease;
+    
+}
+
+.icons-user:active{ 
+    transform: translateY(0.1rem);
+    
+}
+
+
+
+.icons-moon{
+    margin-left: 170vh;
+    font-size: 60px;
+    margin-top: -7.5vh;
+    cursor: pointer;
+    
+}
+.icons-moon:active{ 
+    transform: translateY(0.1rem);
+    
+}
 
 
 .header.active {
