@@ -38,9 +38,9 @@
 }
 
 .icons-user{
-    margin-left: 182vh;
+    margin-left: 170vh;
     font-size: 60px;
-    margin-top: -7.75vh;
+    margin-top: -3.8%;
     cursor: pointer;
     opacity: 100;
     transition: opacity 2s ease;
@@ -57,9 +57,9 @@
 
 
 .icons-moon{
-    margin-left: 170vh;
+    margin-left: 180vh;
     font-size: 60px;
-    margin-top: -7.5vh;
+    margin-top: -7vh;
     cursor: pointer;
     opacity: 100;
     transition: opacity 2s ease;
@@ -91,6 +91,19 @@
 @media screen and (max-width: 768px) {
     #logo {
         height: 8vh;
+    }
+
+    .icons-moon{
+        font-size: 45px;
+        margin-left: 75vw;
+        margin-top: -3vh;
+    }
+
+    .icons-user{
+        font-size: 45px;
+        margin-left: 85vw;
+        margin-top: -7.1vh;
+        
     }
     
 }
