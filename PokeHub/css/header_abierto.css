@@ -1,4 +1,5 @@
 
+
 .header {
     background-color: red;
     position: fixed;
@@ -8,7 +9,18 @@
     z-index: 20;
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
     border-bottom: 0.5rem solid black;
+    
 
+}
+
+.purple-background {
+    background-color: purple;
+   
+}
+.dark{
+    background-color: black;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
 }
 
 .circle {
@@ -29,7 +41,7 @@
 #logo{
     transform: translateY(-50%);
     height: 12vh;
-    background-color: red;
+   
     position:relative;
     top: 50%;
     left: 4vw;
@@ -54,6 +66,7 @@
     opacity: 100;
     transition: opacity 2s ease;
     margin-left: 3rem;
+   
     
 }
 
@@ -66,17 +79,63 @@
 
 
 
-.icons-moon{
-    font-size: 60px;
+.switch{
+    
+    display: inline-block;
+    position: relative;
     cursor: pointer;
     opacity: 100;
     transition: opacity 2s ease;
+    height: 40px;
+    width: 70px;
+    border-radius: 34px;
+    border: none;
+    background-color: #9a86fd;
+    color: white;
+    opacity: 100;
+    transition: 1s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    
     
 }
-.icons-moon:active{ 
-    transform: translateY(0.1rem);
+
+#moon{
+    margin-left:1rem;
+}
+
+.switch::after{
+   position:absolute;
+   content: "";
+   height: 30px;
+   width: 30px;
+   left: 4px;
+   bottom: 5px;
+   border-radius: 50%;
+   background-color: #fff;
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+
+}  
+ 
+
+.switch.active::after{
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
     
 }
+
+.switch.active{ 
+    background-color: #ffdb70;
+    color: black;
+
+
+    
+}
+
+
 
 
 .header.active {
@@ -101,18 +160,23 @@
         height: 8vh;
     }
 
-    .icons-moon{
-        font-size: 50px;
-        margin-top: 1rem;
+    .switch{
+        width: 17rem;
+        
+    }
+    .switch::after{
+        height: 56px;
+        width: 56px;
+        margin-top: 0.2rem;
+        
+        
     }
 
-    .icons-user{
-        font-size: 50px; 
-        margin-top: 1rem;
+    #moon{
+        margin-left: 2rem;
     }
 
-
-    
+  
 }
 
  

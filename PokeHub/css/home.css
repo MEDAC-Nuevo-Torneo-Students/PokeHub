@@ -17,6 +17,9 @@ main {
 }
 
 
+.dark{
+    background-color: purple;
+}
 
 #pokeinfo-container {
     grid-column: span 1; 
