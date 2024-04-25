@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeHub</title>
+    <link rel="icon" href="/img/logo_pokeball.png" type="png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header_abierto.css">
+    <link rel="stylesheet" href="/css/footer_abierto.css">
+    <link rel="stylesheet" href="/css/home_suggests.css">
+    <link rel="stylesheet" href="/css/home_chat.css">
+    <link rel="stylesheet" href="/css/home_feed.css">
+    <link rel="stylesheet" href="/css/barra_home_movil.css">
+    <script src="/jscript/load_pokeinfo.js"></script>
+    <script src="/jscript/load_suggest.js"></script>
+    <script src="/jscript/load_chat.js"></script>
+    <script src="/jscript/load_footer_movil.js"></script>
+    
+    
+</head>
+<body>
+    <header>
+        <div id="header-container"></div>
+    </header>
+    <main>
+        
+
+            <div id="pokeinfo-container" class="grid-item"></div>
+            <div id="feed-container" class="grid-item scrollable">
+                <div id="feed">
+                    <div class="feed_selector">
+                            <button>For You</button>
+                            <button>Friends</button>
+                    </div>
+                
+                    <div class="feed_boxes">
+                        <!-- Team 1 -->
+                        <div class="feed_box">
+                            <div class="feedText">
+                                <p class="teamName"><%= datos1[0].team_name %></p>
+                                <p class="username">@<%= datos1[0].nickname %></p>
+                            </div>
+                        
+                            <div class="pokemon_imgs">
+                                <div class="pokeframe" poke-id="<%= datos1[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= datos2[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= datos3[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= datos4[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= datos5[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= datos6[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                            </div>
+                            <div class="bottom_row">
+                                <div class="interactions">
+                                    <div class="likes">
+                                        <i class='bx bx-heart'></i>
+                                        <p><%= posts[0].likes %></p>
+                                    </div>
+                                    <div class="shared">
+                                        <i class='bx bx-share-alt' ></i>
+                                        <p>20</p>
+                                    </div>
+                                    <div class="comments">
+                                        <i class='bx bx-comment' ></i>
+                                        <p>5</p>
+                                    </div>
+                                </div>
+                                <button type="submit">View</button>
+                            </div>
+                            
+                        </div>
+                        <!-- Team 2 -->
+                        <div class="feed_box">
+                            <div class="feedText">
+                                <p class="teamName">2º Gen Team</p>
+                                <p class="username">@Albert_F</p>
+                            </div>
+                        
+                            <div class="pokemon_imgs">
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/chikorita.png" alt="Chikorita"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/cyndaquil.png" alt="Cyndaquil"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/totodile.png" alt="Totodile"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/sentret.png" alt="Sentret"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/hoothoot.png" alt="Hoothoot"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/ledyba.png" alt="Ledyba"></a></div>
+                            </div>
+                            <div class="bottom_row">
+                                <div class="interactions">
+                                    <div class="likes">
+                                        <i class='bx bx-heart'></i>
+                                        <p>20</p>
+                                    </div>
+                                    <div class="shared">
+                                        <i class='bx bx-share-alt' ></i>
+                                        <p>30</p>
+                                    </div>
+                                    <div class="comments">
+                                        <i class='bx bx-comment' ></i>
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                                <button type="submit">View</button>
+                            </div>
+                        </div>
+                        <!-- Team 3 -->
+                        <div class="feed_box">
+                            <div class="feedText">
+                                <p class="teamName">3º Gen Team</p>
+                                <p class="username">@Jjrajjr</p>
+                            </div>
+                        
+                            <div class="pokemon_imgs">
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/sceptile.png" alt="Sceptile"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/swampert.png" alt="Swampert"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/blaziken.png" alt="Blaziken"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/flygon.png" alt="Flygon"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/aggron.png" alt="Aggron"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/milotic.png" alt="Milotic"></a></div>
+        
+                            </div>
+                            <div class="bottom_row">
+                                <div class="interactions">
+                                    <div class="likes">
+                                        <i class='bx bx-heart'></i>
+                                        <p>2</p>
+                                    </div>
+                                    <div class="shared">
+                                        <i class='bx bx-share-alt' ></i>
+                                        <p>0</p>
+                                    </div>
+                                    <div class="comments">
+                                        <i class='bx bx-comment' ></i>
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <button type="submit">View</button>
+                            </div>
+                            
+                        </div>
+                        <!-- Team 4 -->
+                        <div class="feed_box">
+                            <div class="feedText">
+                                <p class="teamName">4º Gen Team</p>
+                                <p class="username">@Reax007</p>
+                            </div>
+                        
+                            <div class="pokemon_imgs">
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/infernape.png" alt="Infernape"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/empoleon.png" alt="Empoleon"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/torterra.png" alt="Torterra"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/luxray.png" alt="Luxray"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/lucario.png" alt="Lucario"></a></div>
+                                <div class="pokeframe"><a><img src="https://img.pokemondb.net/sprites/black-white/normal/magnezone.png" alt="Magnezone"></a></div>
+                            </div>
+                            <div class="bottom_row">
+                                <div class="interactions">
+                                    <div class="likes">
+                                        <i class='bx bx-heart'></i>
+                                        <p>5</p>
+                                    </div>
+                                    <div class="shared">
+                                        <i class='bx bx-share-alt' ></i>
+                                        <p>3</p>
+                                    </div>
+                                    <div class="comments">
+                                        <i class='bx bx-comment' ></i>
+                                        <p>2</p>
+                                    </div>
+                                </div>
+                                <button type="submit">View</button>
+                            </div>
+                            
+                        </div>
+                        
+                    
+                        
+                    </div>
+                    <div id="post">
+                        <button type="submit">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="suggests-container" class="grid-item"></div>
+            <div id="chat-container" class="grid-item"></div>
+            
+
+    </main>
+    <footer>
+        <div id="footer-movil-container"></div>
+        <div id="footer-container"></div>
+    </footer>
+
+    <script src="/jscript/pokebal_animation.js"></script>
+    <script src="/jscript/load_header.js"></script>
+    <script src="/jscript/load_footer.js"></script>
+    <script src="/jscript/feed_box_pokemon_clicked.js"></script>
+    <script src="/jscript/pokeframe_api_loader.js"></script>
+    
+    
+</body>
+</html>

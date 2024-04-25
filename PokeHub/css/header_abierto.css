@@ -37,23 +37,13 @@
     transition: opacity 2s ease;
 }
 
-.header-button{
-    display: flex;
-    flex-direction: row;
-    position:relative;
-    margin-right: 2rem; 
-    margin-top: -4.3rem;
-    justify-content: flex-end;
-    
-    
-}
-
 .icons-user{
+    margin-left: 182vh;
     font-size: 60px;
+    margin-top: -7.75vh;
     cursor: pointer;
     opacity: 100;
     transition: opacity 2s ease;
-    margin-left: 3rem;
     
 }
 
@@ -67,7 +57,9 @@
 
 
 .icons-moon{
+    margin-left: 170vh;
     font-size: 60px;
+    margin-top: -7.5vh;
     cursor: pointer;
     opacity: 100;
     transition: opacity 2s ease;
@@ -100,19 +92,5 @@
     #logo {
         height: 8vh;
     }
-
-    .icons-moon{
-        font-size: 50px;
-        margin-top: 1rem;
-    }
-
-    .icons-user{
-        font-size: 50px; 
-        margin-top: 1rem;
-    }
-
-
     
 }
-
- 
