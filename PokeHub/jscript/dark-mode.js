@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const btnSwitch = document.querySelector('.switch');
