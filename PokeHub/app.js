@@ -17,13 +17,7 @@ const connection = require('./db');
 app.get('/home', (req, res) => {
     // Realizar consultas a la base de datos para cada Pokémon en el equipo
     const queries = [ 
-        'SELECT * FROM pokehub.team JOIN pokehub.user_info ON pokehub.team.id_user = pokehub.user_info.id JOIN pokehub.pokemon_build ON pokehub.team.id_Pokemon1_build = pokehub.pokemon_build.id;',
-        'SELECT * FROM pokehub.team JOIN pokehub.user_info ON pokehub.team.id_user = pokehub.user_info.id JOIN pokehub.pokemon_build ON pokehub.team.id_Pokemon2_build = pokehub.pokemon_build.id;',
-        'SELECT * FROM pokehub.team JOIN pokehub.user_info ON pokehub.team.id_user = pokehub.user_info.id JOIN pokehub.pokemon_build ON pokehub.team.id_Pokemon3_build = pokehub.pokemon_build.id;',
-        'SELECT * FROM pokehub.team JOIN pokehub.user_info ON pokehub.team.id_user = pokehub.user_info.id JOIN pokehub.pokemon_build ON pokehub.team.id_Pokemon4_build = pokehub.pokemon_build.id;',
-        'SELECT * FROM pokehub.team JOIN pokehub.user_info ON pokehub.team.id_user = pokehub.user_info.id JOIN pokehub.pokemon_build ON pokehub.team.id_Pokemon5_build = pokehub.pokemon_build.id;',
-        'SELECT * FROM pokehub.team JOIN pokehub.user_info ON pokehub.team.id_user = pokehub.user_info.id JOIN pokehub.pokemon_build ON pokehub.team.id_Pokemon6_build = pokehub.pokemon_build.id;',
-        'SELECT * FROM pokehub.post JOIN pokehub.team where pokehub.post.id_team = pokehub.team.id' 
+        'select team.id, team.team_name, pokemon_build.* from team left join pokemon_build on team.id_Pokemon1_build = pokemon_build.id union all select team.id, team.team_name, pokemon_build.* from team left join pokemon_build on team.id_Pokemon2_build = pokemon_build.id union all select team.id, team.team_name, pokemon_build.* from team left join pokemon_build on team.id_Pokemon3_build = pokemon_build.id union all select team.id, team.team_name, pokemon_build.* from team left join pokemon_build on team.id_Pokemon4_build = pokemon_build.id union all select team.id, team.team_name, pokemon_build.* from team left join pokemon_build on team.id_Pokemon5_build = pokemon_build.id union all select team.id, team.team_name, pokemon_build.* from team left join pokemon_build on team.id_Pokemon6_build = pokemon_build.id;'
     ];
 
     // Realizar las consultas en serie
@@ -45,6 +39,7 @@ app.get('/home', (req, res) => {
         } else {
             // Renderizar el archivo EJS y pasar los resultados de las consultas como datos
             res.render('home', { 
+                datos: results,
                 datos1: results[0], 
                 datos2: results[1], 
                 datos3: results[2], 
