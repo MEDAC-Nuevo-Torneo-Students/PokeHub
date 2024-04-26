@@ -18,7 +18,7 @@
    
 }
 .dark{
-    background-color: black;
+    background-color: #333333;
     -webkit-transition: 0.4s;
    transition: 0.4s;
 }
@@ -96,6 +96,7 @@
     transition: 1s;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+    margin-top: 0.7rem;
     
     
 }
@@ -161,12 +162,13 @@
     }
 
     .switch{
-        width: 17rem;
+        width: 70px;
+        margin-top: 1rem;
         
     }
     .switch::after{
-        height: 56px;
-        width: 56px;
+        height: 30px;
+        width: 30px;
         margin-top: 0.2rem;
         
         
