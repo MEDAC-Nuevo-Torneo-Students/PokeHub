@@ -10,8 +10,8 @@ fetch('/html/header.html')
                 document.querySelector('#footer').classList.toggle("active");
                 document.querySelector('#logo').classList.toggle("active");
                 document.querySelector('#copyright').classList.toggle("active");
-                document.querySelector('.icons-moon').classList.toggle("active");
-                document.querySelector('.icons-user').classList.toggle("active");
+                document.querySelector('.icons-user').classList.toggle("activo");
+                document.querySelector('.switch').classList.toggle("activo");
             });
         }, 500); // Waiting time in milliseconds
     });
