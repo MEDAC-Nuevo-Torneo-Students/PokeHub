@@ -17,6 +17,14 @@
     
 }
 
+.dark-background{
+    background-color: #222222;
+    color: white;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+}
+
 
 .messages{
     text-align: center;
@@ -28,6 +36,8 @@
     margin-bottom: 2.2rem;
     
 }
+
+
 
 .box-message{
     display: flex;
@@ -64,11 +74,19 @@
     font-size: 40px;
     margin-top:0.2rem;
     margin-left: 5rem;
-    color: #000000;
+    
     z-index: 1;
 
 
 }
+
+.messages-white{
+    color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+
 
 .users{
     display: flex;
