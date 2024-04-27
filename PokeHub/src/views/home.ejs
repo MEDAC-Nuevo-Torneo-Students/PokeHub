@@ -35,9 +35,9 @@
                             <button>For You</button>
                             <button>Friends</button>
                     </div>
-                    <% datos.forEach(function(dato) { %>
                     <div class="feed_boxes">
-                        <!-- Team 0 -->
+                    <% datos.forEach(function(dato) { %>
+                    
                         <div class="feed_box">
                             <div class="feedText">
                                 <p class="teamName"><%= dato.team_name %></p>
@@ -45,12 +45,12 @@
                             </div>
                         
                             <div class="pokemon_imgs">
-                                <div class="pokeframe" poke-id="<%= dato[0].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= dato[0].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= dato[0].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= dato[0].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= dato[0].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= dato[0].id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon1_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon2_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon3_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon4_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon5_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon6_id_pokemon %>"><a><img src="" alt=""></a></div>
                             </div>
                             <div class="bottom_row">
                                 <div class="interactions">
@@ -72,76 +72,8 @@
                             
                         </div>
                         <% }); %>
-                        <!-- Team 1 -->
-                        <div class="feed_box">
-                            <div class="feedText">
-                                <p class="teamName"><%= datos1[1].team_name %></p>
-                                <p class="username">@<%= datos1[1].nickname %></p>
-                            </div>
                         
-                            <div class="pokemon_imgs">
-                                <div class="pokeframe" poke-id="<%= datos1[1].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos2[1].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos3[1].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos4[1].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos5[1].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos6[1].id_pokemon %>"><a><img src="" alt=""></a></div>
-                            </div>
-                            <div class="bottom_row">
-                                <div class="interactions">
-                                    <div class="likes">
-                                        <i class='bx bx-heart'></i>
-                                        <p><%= posts[1].likes %></p>
-                                    </div>
-                                    <div class="shared">
-                                        <i class='bx bx-share-alt' ></i>
-                                        <p>20</p>
-                                    </div>
-                                    <div class="comments">
-                                        <i class='bx bx-comment' ></i>
-                                        <p>5</p>
-                                    </div>
-                                </div>
-                                <button type="submit">View</button>
-                            </div>
-                            
-                        </div>
-                        <!-- Team 2 -->
-                        <div class="feed_box">
-                            <div class="feedText">
-                                <p class="teamName"><%= datos1[2].team_name %></p>
-                                <p class="username">@<%= datos1[2].nickname %></p>
-                            </div>
                         
-                            <div class="pokemon_imgs">
-                                <div class="pokeframe" poke-id="<%= datos1[2].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos2[2].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos3[2].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos4[2].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos5[2].id_pokemon %>"><a><img src="" alt=""></a></div>
-                                <div class="pokeframe" poke-id="<%= datos6[2].id_pokemon %>"><a><img src="" alt=""></a></div>
-                            </div>
-                            <div class="bottom_row">
-                                <div class="interactions">
-                                    <div class="likes">
-                                        <i class='bx bx-heart'></i>
-                                        <p><%= posts[2].likes %></p>
-                                    </div>
-                                    <div class="shared">
-                                        <i class='bx bx-share-alt' ></i>
-                                        <p>20</p>
-                                    </div>
-                                    <div class="comments">
-                                        <i class='bx bx-comment' ></i>
-                                        <p>5</p>
-                                    </div>
-                                </div>
-                                <button type="submit">View</button>
-                            </div>
-                            
-                        </div>
-                        
-                    
                         
                     </div>
                     <div id="post">
@@ -151,8 +83,6 @@
             </div>
             <div id="suggests-container" class="grid-item"></div>
             <div id="chat-container" class="grid-item"></div>
-            
-
     </main>
     <footer>
         <div id="footer-movil-container"></div>
