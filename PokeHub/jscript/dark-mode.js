@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const homechat = document.querySelector('.menu-chat');
         const homesuggest = document.querySelector('.menu-expanded');
         const homechaticon = document.querySelector('.icon-message');
+        const profiledropdown = document.querySelector('.dropdown');
+        const dropdownhover = document.querySelector('.dropdown li:hover');
         const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
         // Función para activar el modo oscuro
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homechat.classList.add('dark-background');
             homesuggest.classList.add('dark-background');
             homechaticon.classList.add('messages-white');
+            profiledropdown.classList.add('purple-background');
             localStorage.setItem('darkMode', 'true');
         };
 
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homechat.classList.remove('dark-background');
             homesuggest.classList.remove('dark-background');
             homechaticon.classList.remove('messages-white');
+            profiledropdown.classList.remove('purple-background');
             localStorage.setItem('darkMode', 'false');
         };
 

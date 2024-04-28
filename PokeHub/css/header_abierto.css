@@ -13,43 +13,100 @@
 
 }
 
+:root {
+    --hover-color-light: #a10000; /* Color rojo más oscuro para el modo claro */
+    --hover-color-dark: #8a4dff; /* Morado más claro para el modo oscuro */
+}
+
+
+
 .dropdown {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+    min-width: 160px; 
+    min-height: 160px; 
+    font-size: 20px;
+    background-color: red;
+    border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    justify-content: space-around;
+    margin-left: 10rem;
+    right: -2rem;
+    
+    
 }
-.dropdown.show {
+
+ul li a i {
+    margin-right: 5px;
+}
+
+
+.icons-user.active .dropdown{
     display: flex;
+    display: block;
 }
+
 
 
 .dropdown ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1;
+    flex-direction: column;
+    
+    
 }
 
-.dropdown li {
-    padding: 10px;
+
+
+.dropdown li a {
+    color: black;
+
+    display: block;
+    
+    margin-bottom: 8px;
 }
+
+
+#usuario-dropdown{
+    margin-bottom: 1rem;
+}
+.profile-picture {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.profile-picture img {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
 
 .dropdown li:hover {
-    background-color: #f0f0f0;
+    background-color: var(--hover-color-light); 
+    transform: translateX(5px);
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
-.profile-icon {
-    cursor: pointer;
+.dark .dropdown li:hover {
+    background-color: var(--hover-color-dark); 
 }
 
 .purple-background {
     background-color: purple;
    
 }
+
+
 .dark{
     background-color: #333333;
     -webkit-transition: 0.4s;
@@ -99,20 +156,11 @@
     opacity: 100;
     transition: opacity 2s ease;
     margin-left: 3rem;
-    opacity: 100;
-    -webkit-transition: 0.4s;
-   transition: 0.4s;
+   
    
     
 }
 
-
-
-.icons-user:active{ 
-    transform: translateY(0.1rem);
-    
-    
-}
 
 
 
