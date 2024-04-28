@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeHub</title>
-    <link rel="icon" href="/img/logo.png" type="png">
+    <link rel="icon" href="/img/logo_pokeball.png" type="png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/header_abierto.css">
     <link rel="stylesheet" href="/css/footer_abierto.css">
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/jscript/load_footer.js"></script>
+    <script src="/jscript/load_header.js"></script>
+    <script src="/jscript/pokebal_animation.js"></script>
 </head>
 <body>
     <header>
         <div id="header-container"></div>
-        <script>
-            fetch('/html/header.html')
-            .then(response => response.text())
-            .then(html => {
-            document.getElementById('header-container').innerHTML = html;
-            });
-        </script>
     </header>
     <main>
         <div class="wrapper">
@@ -56,18 +52,25 @@
                 </div>
             </form>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <% if(typeof alert != "undefined") { %>
+            <script>
+                Swal.fire({
+                    title: '<%= alertTitle %>',
+                    text: '<%= alertMessage %>',
+                    icon: '<%= alertIcon %>',
+                    showConfirmButton: '<%= showConfirmButton %>',
+                    timer: '<%= timer %>'
+                }).then(() => {
+                    window.location='/<%= ruta %>'; 
+                });
+            </script>
+            <% } %>
     </main>
     <footer>
         <div id="footer-container"></div>
-        <script>
-            fetch('/html/footer.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('footer-container').innerHTML = html;
-                });
-        </script> 
-        
     </footer>
-    <script src="/jscript/script.js"></script>
+    
+    
 </body>
 </html>
