@@ -37,6 +37,7 @@
                             <button>Friends</button>
                     </div>
                     <div class="feed_boxes">
+
                     <% datos.forEach(function(dato) { %>
                     
                         <div class="feed_box">
@@ -52,11 +53,13 @@
                                 <div class="pokeframe" poke-id="<%= dato.Pokemon4_id_pokemon %>"><a><img src="" alt=""></a></div>
                                 <div class="pokeframe" poke-id="<%= dato.Pokemon5_id_pokemon %>"><a><img src="" alt=""></a></div>
                                 <div class="pokeframe" poke-id="<%= dato.Pokemon6_id_pokemon %>"><a><img src="" alt=""></a></div>
+
                             </div>
                             <div class="bottom_row">
                                 <div class="interactions">
                                     <div class="likes">
                                         <i class='bx bx-heart'></i>
+
                                         <p><%= dato.likes %></p>
                                     </div>
                                     <div class="shared">
@@ -66,13 +69,16 @@
                                     <div class="comments">
                                         <i class='bx bx-comment' ></i>
                                         <p>5</p>
+
                                     </div>
                                 </div>
                                 <button type="submit">View</button>
                             </div>
                             
                         </div>
+
                         <% }); %>
+
                         
                         
                         
