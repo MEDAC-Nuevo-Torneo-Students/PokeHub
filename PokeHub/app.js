@@ -21,7 +21,6 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 // Importar la conexión a la base de datos
 const connection = require('./db');
 
-/*
 app.get('/home', (req, res) => {
     // Consulta SQL con el prefijo en el nombre de la columna
     const sqlQuery = `SELECT t.*, 
@@ -84,8 +83,7 @@ app.get('/home', (req, res) => {
             res.render('home', { datos: results });
         }
     });
-});  */
-
+});  
 // Ruta para cargar index.ejs cuando se acceda a /home
 app.get('/', (req, res) => {
     res.render('index');
