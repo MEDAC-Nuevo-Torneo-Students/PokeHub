@@ -10,19 +10,15 @@ const Swal = require('sweetalert2');
 const app = express();
 const port = 3000;
 
-//2 - steamos urlencoded para capturar los datos del formulario
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
-// Configurar EJS como motor de plantillas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'));
 
-// Importar la conexión a la base de datos
 const connection = require('./db');
 
 app.get('/home', (req, res) => {
-    // Consulta SQL con el prefijo en el nombre de la columna
     const sqlQuery = `SELECT t.*, 
                         pb1.id AS Pokemon1_id, pb1.id_pokemon AS Pokemon1_id_pokemon, pb1.gender AS Pokemon1_gender, 
                         pb1.id_ability AS Pokemon1_id_ability, pb1.id_item AS Pokemon1_id_item, pb1.id_nature AS Pokemon1_id_nature, 
@@ -79,12 +75,10 @@ app.get('/home', (req, res) => {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
         } else {
-            // Renderizar el archivo EJS y pasar los resultados de la consulta como datos
             res.render('home', { datos: results });
         }
     });
 });  
-// Ruta para cargar index.ejs cuando se acceda a /home
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -176,14 +170,12 @@ app.post('/auth', async (req,res)=>{
 
 
 
-// Servir archivos estáticos desde la carpeta raíz
 app.use(express.static(__dirname));
 
 
 
 
 
-// Var. de session
 const session = require('express-session')
 app.use(session({
     secret:'secret',
@@ -191,7 +183,6 @@ app.use(session({
     saveUninitialized:true
 }))
 
-// Iniciar el servidor
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
