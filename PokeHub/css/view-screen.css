@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F4EAEA;
+}
+  
+.container {
+    display: flex;
+    margin-left: 2rem;
+}
+
+#pokemon1{
+    margin-top: 12rem;
+}
+
+.pokemon-card {
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 85px; 
+    width: 620px; /* Reducido el ancho */
+    margin-top: 1rem;
+}
+
+.frame{
+
+    margin: 0.5rem;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    border-top:grey solid;
+    width: 5rem;
+    
+}
+
+.frame img {
+    align-items: center;
+    justify-content: center;
+}
+
+ul img{
+    width: 14px;
+}
+
+frame img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    width: 100%;
+    height: 100%;
+}
+  
+.pokemon-details {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    margin-top: -1rem;
+}
+
+.pokemon-list {
+    list-style: none;
+    padding: 0;
+}
+
+#ivMinus{
+    color: blue;
+}
+
+#ivPlus{
+    color: red;
+}
+
+.pokemon-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.pokemon-list li img {
+    margin-right: 2px;
+    width: 20px;
+    height: 20px;
+}
+  
+.details-column {
+    margin-top: -1rem;
+    list-style: none;
+    padding: 0;
+    width: 7rem;
+    margin-left: 2rem;
+}
+  
+.stats {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 350px; /* Reducido el ancho */
+    height: 70px;
+    margin-left: 3rem;
+    border-radius: 10px;
+    box-shadow: inset 0 10px 1px -6px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    
+
+}
+
+.stats table{
+    margin-left: 1rem;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+.right-panel {
+    width: 30%;
+    padding: 0 20px;
+    margin-left: 56vw;
+    margin-top: -43rem;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.import-card{
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 45px;
+    font-weight: bold;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.user-card,
+.team-card {
+    background-color: rgba(164, 164, 164, 0.6);
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    
+
+}
+
+.team-card a{
+    align-items: center;
+}
+
+
+
+.team-description {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    height: 560px;
+    width: 785px;
+    margin-left: 58rem;
+    overflow-y: auto; 
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra interna */
+    border: 2px solid #ccc; /* Color y grosor del borde */
+}
