@@ -131,12 +131,12 @@ ul li a i {
 #logo{
     transform: translateY(-50%);
     height: 12vh;
-   
     position:relative;
     top: 50%;
     left: 4vw;
     opacity: 100;
     transition: opacity 2s ease;
+    z-index: 5;
 }
 
 .header-button{
@@ -146,7 +146,7 @@ ul li a i {
     margin-right: 2rem; 
     margin-top: -4.3rem;
     justify-content: flex-end;
-    
+    z-index: 1;
     
 }
 
@@ -156,12 +156,8 @@ ul li a i {
     opacity: 100;
     transition: opacity 2s ease;
     margin-left: 3rem;
-   
-   
     
 }
-
-
 
 
 .switch{
@@ -177,13 +173,7 @@ ul li a i {
     border: none;
     background-color: #9a86fd;
     color: white;
-    opacity: 100;
-    transition: 1s;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
     margin-top: 0.7rem;
-    
-    
     
 }
 
@@ -192,18 +182,16 @@ ul li a i {
 }
 
 .switch::after{
-   position:absolute;
-   content: "";
-   height: 30px;
-   width: 30px;
-   left: 4px;
-   bottom: 5px;
-   border-radius: 50%;
-   background-color: #fff;
-   -webkit-transition: 0.4s;
-   transition: 0.4s;
-
-
+    position:absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 4px;
+    bottom: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }  
  
 
@@ -227,23 +215,26 @@ ul li a i {
 
 .header.active {
     height: 50vh;
-    
 }
 
 #logo.active {
     opacity: 0;
+    pointer-events: none;
 }
 
 .icons-user.activo{
     opacity: 0;
+    pointer-events: none;
 }
 
 .switch.activo{
     opacity: 0;
+    pointer-events: none;
 }
 
 .icons-moon.active{
     opacity: 0;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 768px) {
