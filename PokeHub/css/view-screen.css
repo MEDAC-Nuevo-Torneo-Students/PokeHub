@@ -25,6 +25,9 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+#espacio{
+    height: 10rem;
+}
 .frame{
 
     margin: 0.5rem;
@@ -51,7 +54,7 @@ frame img {
     width: 100%;
     height: 100%;
 }
-  
+
 .pokemon-details {
     display: flex;
     flex-direction: column;
@@ -86,7 +89,7 @@ frame img {
     width: 20px;
     height: 20px;
 }
-  
+
 .details-column {
     margin-top: -1rem;
     list-style: none;
@@ -94,7 +97,7 @@ frame img {
     width: 7rem;
     margin-left: 2rem;
 }
-  
+
 .stats {
     background-color: #fff;
     border-radius: 10px;
@@ -123,7 +126,7 @@ frame img {
     width: 30%;
     padding: 0 20px;
     margin-left: 56vw;
-    margin-top: -43rem;
+    margin-top: -5rem;
     display: flex;
     flex-direction: row;
     

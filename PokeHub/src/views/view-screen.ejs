@@ -10,889 +10,134 @@
     <link rel="stylesheet" href="/css/header_abierto.css">
     <script src="/jscript/load_header.js"></script>
     <script src="/jscript/go_to_links.js"></script>
-    <script src="/jscript/dark-mode.js"></script> 
-    <script src="/jscript/menu-perfil.js"></script> 
+    <script src="/jscript/dark-mode.js"></script>
+    <script src="/jscript/menu-perfil.js"></script>
     <script src="/jscript/load_pokeinfo.js"></script>
     <link rel="stylesheet" href="/css/header_abierto.css">
     <link rel="stylesheet" href="/css/footer_abierto.css">
-   
+
     <div id="header-container"></div>
 </head>
 
 <body>
+    <div id = "espacio"></div>
     <% datos.forEach(function(dato) { %>
-    <div class="container">
-        <div class="head">
-            <div class="pokemon-card" id="pokemon1">
-                <div class="frame" poke-id="<%= dato.Pokemon1_id_pokemon %>"><a><img src="" alt=""></a></div>
-                        <div class="pokemon-details">
-                            <ul class="pokemon-list">
-                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
-                                <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png"> <span>Swampertite</span></li>
-                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift Swim</span></li>
-                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                            </ul>
-                        </div>
-
-                    <div class="details-column">
-                        <ul class="pokemon-list">
-                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span></li>
-                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span></li>
-                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span></li>
-                        </ul>
-                    </div>
-                    <div class="stats">
-                        <table>
-                            <tr>
-                                <th></th>
-                                <th>Hp</th>
-                                <th>Atk</th>
-                                <th>Def</th>
-                                <th id="ivMinus">SpA</th>
-                                <th>SpD</th>
-                                <th id="ivPlus">Spe</th>
-                            </tr>
-                            <tr>
-                                <th>IVs</th>
-                                <td>31</td>
-                                <td>31</td>
-                                <td>31</td>
-                                <td>0</td>
-                                <td>31</td>
-                                <td>31</td>
-                            </tr>
-                            <tr>
-                                <th>EVs</th>
-                                <td>4</td>
-                                <td>252</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>252</td>
-                            </tr>
-                            <tr>
-                                <th>Total</th>
-                                <td>174</td>
-                                <td>202</td>
-                                <td>130</td>
-                                <td>90</td>
-                                <td>130</td>
-                                <td>134</td>
-                            </tr>
-                        </table>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="details-column">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="stats">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Hp</th>
-                            <th>Atk</th>
-                            <th>Def</th>
-                            <th id="ivMinus">SpA</th>
-                            <th>SpD</th>
-                            <th id="ivPlus">Spe</th>
-                        </tr>
-                        <tr>
-                            <th>IVs</th>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>0</td>
-                            <td>31</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <th>EVs</th>
-                            <td>4</td>
-                            <td>252</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>252</td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td>174</td>
-                            <td>202</td>
-                            <td>130</td>
-                            <td>90</td>
-                            <td>130</td>
-                            <td>134</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <% }); %>
-
             <div class="container">
                 <div class="head">
                     <div class="pokemon-card">
                         <div class="frame"><img id="pokemonImage"
                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
                                 height="100%"></div>
-                                <div class="pokemon-details">
-                                    <ul class="pokemon-list">
-                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
-                                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png"> <span>Swampertite</span></li>
-                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift Swim</span></li>
-                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                                    </ul>
-                                </div>
-        
-                            <div class="details-column">
-                                <ul class="pokemon-list">
-                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span></li>
-                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span></li>
-                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span></li>
-                                </ul>
-                            </div>
-                            <div class="stats">
-                                <table>
-                                    <tr>
-                                        <th></th>
-                                        <th>Hp</th>
-                                        <th>Atk</th>
-                                        <th>Def</th>
-                                        <th id="ivMinus">SpA</th>
-                                        <th>SpD</th>
-                                        <th id="ivPlus">Spe</th>
-                                    </tr>
-                                    <tr>
-                                        <th>IVs</th>
-                                        <td>31</td>
-                                        <td>31</td>
-                                        <td>31</td>
-                                        <td>0</td>
-                                        <td>31</td>
-                                        <td>31</td>
-                                    </tr>
-                                    <tr>
-                                        <th>EVs</th>
-                                        <td>4</td>
-                                        <td>252</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>252</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Total</th>
-                                        <td>174</td>
-                                        <td>202</td>
-                                        <td>130</td>
-                                        <td>90</td>
-                                        <td>130</td>
-                                        <td>134</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            </div>
+                        <div class="pokemon-details">
+                            <ul class="pokemon-list">
+                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png">
+                                    <span>Swampert</span></li>
+                                <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
+                                    <span>Swampertite</span></li>
+                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png">
+                                    <span>Swift Swim</span></li>
+                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png">
+                                    <span>Jolly</span></li>
+                            </ul>
                         </div>
-        
+
+                        <div class="details-column">
+                            <ul class="pokemon-list">
+                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png">
+                                    <span>Waterfall</span></li>
+                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png">
+                                    <span>Earthquake</span></li>
+                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice
+                                        Punch</span></li>
+                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png">
+                                    <span>Protect</span></li>
+                            </ul>
+                        </div>
+                        <div class="stats">
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Hp</th>
+                                    <th>Atk</th>
+                                    <th>Def</th>
+                                    <th>SpA</th>
+                                    <th>SpD</th>
+                                    <th>Spe</th>
+                                </tr>
+                                <tr>
+                                    <th>IVs</th>
+                                    <td><%= dato.Pokemon1_hp_ivs %></td>
+                                    <td><%= dato.Pokemon1_atk_ivs %></td>
+                                    <td><%= dato.Pokemon1_def_ivs %></td>
+                                    <td><%= dato.Pokemon1_spa_ivs %></td>
+                                    <td><%= dato.Pokemon1_spd_ivs %></td>
+                                    <td><%= dato.Pokemon1_spe_ivs %></td>
+                                </tr>
+                                <tr>
+                                    <th>EVs</th>
+                                    <td><%= dato.Pokemon1_hp_evs %></td>
+                                    <td><%= dato.Pokemon1_atk_evs %></td>
+                                    <td><%= dato.Pokemon1_def_evs %></td>
+                                    <td><%= dato.Pokemon1_spa_evs %></td>
+                                    <td><%= dato.Pokemon1_spd_evs %></td>
+                                    <td><%= dato.Pokemon1_spe_evs %></td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td>174</td>
+                                    <td>202</td>
+                                    <td>130</td>
+                                    <td>90</td>
+                                    <td>130</td>
+                                    <td>134</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="container">
-                        <div class="head">
-                            <div class="pokemon-card">
-                                <div class="frame"><img id="pokemonImage"
-                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                                        height="100%"></div>
-                                        <div class="pokemon-details">
-                                            <ul class="pokemon-list">
-                                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
-                                                <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png"> <span>Swampertite</span></li>
-                                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift Swim</span></li>
-                                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                                            </ul>
-                                        </div>
-                
-                                    <div class="details-column">
-                                        <ul class="pokemon-list">
-                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span></li>
-                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span></li>
-                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="stats">
-                                        <table>
-                                            <tr>
-                                                <th></th>
-                                                <th>Hp</th>
-                                                <th>Atk</th>
-                                                <th>Def</th>
-                                                <th id="ivMinus">SpA</th>
-                                                <th>SpD</th>
-                                                <th id="ivPlus">Spe</th>
-                                            </tr>
-                                            <tr>
-                                                <th>IVs</th>
-                                                <td>31</td>
-                                                <td>31</td>
-                                                <td>31</td>
-                                                <td>0</td>
-                                                <td>31</td>
-                                                <td>31</td>
-                                            </tr>
-                                            <tr>
-                                                <th>EVs</th>
-                                                <td>4</td>
-                                                <td>252</td>
-                                                <td>0</td>
-                                                <td>0</td>
-                                                <td>0</td>
-                                                <td>252</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Total</th>
-                                                <td>174</td>
-                                                <td>202</td>
-                                                <td>130</td>
-                                                <td>90</td>
-                                                <td>130</td>
-                                                <td>134</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    </div>
-                                </div>
-                
-                            </div>
+            </div>
 
-                            <div class="container">
-                                <div class="head">
-                                    <div class="pokemon-card">
-                                        <div class="frame"><img id="pokemonImage"
-                                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                                                height="100%"></div>
-                                                <div class="pokemon-details">
-                                                    <ul class="pokemon-list">
-                                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
-                                                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png"> <span>Swampertite</span></li>
-                                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift Swim</span></li>
-                                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                                                    </ul>
-                                                </div>
-                        
-                                            <div class="details-column">
-                                                <ul class="pokemon-list">
-                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span></li>
-                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span></li>
-                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="stats">
-                                                <table>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>Hp</th>
-                                                        <th>Atk</th>
-                                                        <th>Def</th>
-                                                        <th id="ivMinus">SpA</th>
-                                                        <th>SpD</th>
-                                                        <th id="ivPlus">Spe</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>IVs</th>
-                                                        <td>31</td>
-                                                        <td>31</td>
-                                                        <td>31</td>
-                                                        <td>0</td>
-                                                        <td>31</td>
-                                                        <td>31</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>EVs</th>
-                                                        <td>4</td>
-                                                        <td>252</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>252</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Total</th>
-                                                        <td>174</td>
-                                                        <td>202</td>
-                                                        <td>130</td>
-                                                        <td>90</td>
-                                                        <td>130</td>
-                                                        <td>134</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            </div>
-                                        </div>
-                        
-                                    </div>
-
-                                    <div class="container">
-                                        <div class="head">
-                                            <div class="pokemon-card">
-                                                <div class="frame"><img id="pokemonImage"
-                                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                                                        height="100%"></div>
-                                                        <div class="pokemon-details">
-                                                            <ul class="pokemon-list">
-                                                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
-                                                                <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png"> <span>Swampertite</span></li>
-                                                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift Swim</span></li>
-                                                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                                                            </ul>
-                                                        </div>
-                                
-                                                    <div class="details-column">
-                                                        <ul class="pokemon-list">
-                                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span></li>
-                                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span></li>
-                                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                                                            <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="stats">
-                                                        <table>
-                                                            <tr>
-                                                                <th></th>
-                                                                <th>Hp</th>
-                                                                <th>Atk</th>
-                                                                <th>Def</th>
-                                                                <th id="ivMinus">SpA</th>
-                                                                <th>SpD</th>
-                                                                <th id="ivPlus">Spe</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>IVs</th>
-                                                                <td>31</td>
-                                                                <td>31</td>
-                                                                <td>31</td>
-                                                                <td>0</td>
-                                                                <td>31</td>
-                                                                <td>31</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>EVs</th>
-                                                                <td>4</td>
-                                                                <td>252</td>
-                                                                <td>0</td>
-                                                                <td>0</td>
-                                                                <td>0</td>
-                                                                <td>252</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Total</th>
-                                                                <td>174</td>
-                                                                <td>202</td>
-                                                                <td>130</td>
-                                                                <td>90</td>
-                                                                <td>130</td>
-                                                                <td>134</td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                
-                                            </div>
-
-                                            <div class="container">
-                                                <div class="head">
-                                                    <div class="pokemon-card">
-                                                        <div class="frame"><img id="pokemonImage"
-                                                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                                                                height="100%"></div>
-                                                                <div class="pokemon-details">
-                                                                    <ul class="pokemon-list">
-                                                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
-                                                                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png"> <span>Swampertite</span></li>
-                                                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift Swim</span></li>
-                                                                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                                                                    </ul>
-                                                                </div>
-                                        
-                                                            <div class="details-column">
-                                                                <ul class="pokemon-list">
-                                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span></li>
-                                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span></li>
-                                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                                                                    <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="stats">
-                                                                <table>
-                                                                    <tr>
-                                                                        <th></th>
-                                                                        <th>Hp</th>
-                                                                        <th>Atk</th>
-                                                                        <th>Def</th>
-                                                                        <th id="ivMinus">SpA</th>
-                                                                        <th>SpD</th>
-                                                                        <th id="ivPlus">Spe</th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>IVs</th>
-                                                                        <td>31</td>
-                                                                        <td>31</td>
-                                                                        <td>31</td>
-                                                                        <td>0</td>
-                                                                        <td>31</td>
-                                                                        <td>31</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>EVs</th>
-                                                                        <td>4</td>
-                                                                        <td>252</td>
-                                                                        <td>0</td>
-                                                                        <td>0</td>
-                                                                        <td>0</td>
-                                                                        <td>252</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Total</th>
-                                                                        <td>174</td>
-                                                                        <td>202</td>
-                                                                        <td>130</td>
-                                                                        <td>90</td>
-                                                                        <td>130</td>
-                                                                        <td>134</td>
-                                                                    </tr>
-                                                                </table>
-                                                            </div>
-                                                            </div>
-                                                        </div>
-                                        
-                                                    </div>
+            <% }); %>
             <!-- Repetir la estructura de la tarjeta para cada Pokémon -->
-        </div>
-        <div class="right-panel">
-            <div class="user-card">
-                <i>Jjrajjr</i>
             </div>
-            <div class="import-card">
-                <a>Import</a>
-            </div>
-            <div class="team-card">
-                <a>Rain Team</a>
-            </div>
-
-    </div>
-
-    <div class="container">
-        <div class="head">
-            <div class="pokemon-card">
-                <div class="frame"><img id="pokemonImage"
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                        height="100%"></div>
-                <div class="pokemon-details">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                            <span>Swampertite</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift
-                                Swim</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                    </ul>
+            <div class="right-panel">
+                <div class="user-card">
+                    <i>Jjrajjr</i>
                 </div>
-
-                <div class="details-column">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span>
-                        </li>
-                    </ul>
+                <div class="import-card">
+                    <a>Import</a>
                 </div>
-                <div class="stats">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Hp</th>
-                            <th>Atk</th>
-                            <th>Def</th>
-                            <th id="ivMinus">SpA</th>
-                            <th>SpD</th>
-                            <th id="ivPlus">Spe</th>
-                        </tr>
-                        <tr>
-                            <th>IVs</th>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>0</td>
-                            <td>31</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <th>EVs</th>
-                            <td>4</td>
-                            <td>252</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>252</td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td>174</td>
-                            <td>202</td>
-                            <td>130</td>
-                            <td>90</td>
-                            <td>130</td>
-                            <td>134</td>
-                        </tr>
-                    </table>
+                <div class="team-card">
+                    <a>Rain Team</a>
                 </div>
             </div>
-        </div>
 
-    </div>
 
-    <div class="container">
-        <div class="head">
-            <div class="pokemon-card">
-                <div class="frame"><img id="pokemonImage"
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                        height="100%"></div>
-                <div class="pokemon-details">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                            <span>Swampertite</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift
-                                Swim</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                    </ul>
-                </div>
-
-                <div class="details-column">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="stats">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Hp</th>
-                            <th>Atk</th>
-                            <th>Def</th>
-                            <th id="ivMinus">SpA</th>
-                            <th>SpD</th>
-                            <th id="ivPlus">Spe</th>
-                        </tr>
-                        <tr>
-                            <th>IVs</th>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>0</td>
-                            <td>31</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <th>EVs</th>
-                            <td>4</td>
-                            <td>252</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>252</td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td>174</td>
-                            <td>202</td>
-                            <td>130</td>
-                            <td>90</td>
-                            <td>130</td>
-                            <td>134</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
-        </div>
+            <div class="team-description">
+                <a>-Pelipper is the newest Drizzle user in the games, as it has gained the Drizzle ability in the 7th
+                    Generation. While Politoed is more defensive in nature, Pelipper is a rain setter that barring from
+                    using
+                    Tailwind to increase the speed of its teammates, will spend the rest of its time on the field going
+                    for
+                    damaging moves. We saw how popular Pelipper was during the VGC 2017 format and what makes it
+                    especially
+                    useful is that most Rain teams in the past would struggle with grass types since the flying typing
+                    adds a
+                    new dynamic to the interaction.<br><br>
 
-    </div>
+                    -Swampert has received a major buff in the way Mega Evolved Pokemon interacts with weather upon Mega
+                    Evolving. You can check out this video for more info, but what happens is once Swampert Mega Evolves
+                    in the
+                    rain, it automatically gains the Swift Swim ability and the speed boost in the rain. This alone
+                    makes it a
+                    terrifying Pokemon as Swampert can become the fastest Pokemon on the field and threaten with some
+                    big
+                    damage. Check out this pastebin for sample sets.</a>
 
-    <div class="container">
-        <div class="head">
-            <div class="pokemon-card">
-                <div class="frame"><img id="pokemonImage"
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                        height="100%"></div>
-                <div class="pokemon-details">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                            <span>Swampertite</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift
-                                Swim</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                    </ul>
-                </div>
-
-                <div class="details-column">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="stats">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Hp</th>
-                            <th>Atk</th>
-                            <th>Def</th>
-                            <th id="ivMinus">SpA</th>
-                            <th>SpD</th>
-                            <th id="ivPlus">Spe</th>
-                        </tr>
-                        <tr>
-                            <th>IVs</th>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>0</td>
-                            <td>31</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <th>EVs</th>
-                            <td>4</td>
-                            <td>252</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>252</td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td>174</td>
-                            <td>202</td>
-                            <td>130</td>
-                            <td>90</td>
-                            <td>130</td>
-                            <td>134</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
-        </div>
-
-    </div>
-
-    <div class="container">
-        <div class="head">
-            <div class="pokemon-card">
-                <div class="frame"><img id="pokemonImage"
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                        height="100%"></div>
-                <div class="pokemon-details">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                            <span>Swampertite</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift
-                                Swim</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                    </ul>
-                </div>
-
-                <div class="details-column">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="stats">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Hp</th>
-                            <th>Atk</th>
-                            <th>Def</th>
-                            <th id="ivMinus">SpA</th>
-                            <th>SpD</th>
-                            <th id="ivPlus">Spe</th>
-                        </tr>
-                        <tr>
-                            <th>IVs</th>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>0</td>
-                            <td>31</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <th>EVs</th>
-                            <td>4</td>
-                            <td>252</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>252</td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td>174</td>
-                            <td>202</td>
-                            <td>130</td>
-                            <td>90</td>
-                            <td>130</td>
-                            <td>134</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="container">
-        <div class="head">
-            <div class="pokemon-card">
-                <div class="frame"><img id="pokemonImage"
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                        height="100%"></div>
-                <div class="pokemon-details">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                            <span>Swampertite</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png"> <span> Swift
-                                Swim</span></li>
-                        <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png"> <span>Jolly</span></li>
-                    </ul>
-                </div>
-
-                <div class="details-column">
-                    <ul class="pokemon-list">
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png"> <span>Waterfall</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png"> <span>Earthquake</span>
-                        </li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice Punch</span></li>
-                        <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png"> <span>Protect</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="stats">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Hp</th>
-                            <th>Atk</th>
-                            <th>Def</th>
-                            <th id="ivMinus">SpA</th>
-                            <th>SpD</th>
-                            <th id="ivPlus">Spe</th>
-                        </tr>
-                        <tr>
-                            <th>IVs</th>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>31</td>
-                            <td>0</td>
-                            <td>31</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <th>EVs</th>
-                            <td>4</td>
-                            <td>252</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>252</td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td>174</td>
-                            <td>202</td>
-                            <td>130</td>
-                            <td>90</td>
-                            <td>130</td>
-                            <td>134</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- Repetir la estructura de la tarjeta para cada Pokémon -->
-    </div>
-    <div class="right-panel">
-        <div class="user-card">
-            <i>Jjrajjr</i>
-        </div>
-        <div class="import-card">
-            <a>Import</a>
-        </div>
-        <div class="team-card">
-            <a>Rain Team</a>
-        </div>
-
-
-    </div>
-    <div class="team-description">
-        <a>-Pelipper is the newest Drizzle user in the games, as it has gained the Drizzle ability in the 7th
-            Generation. While Politoed is more defensive in nature, Pelipper is a rain setter that barring from using
-            Tailwind to increase the speed of its teammates, will spend the rest of its time on the field going for
-            damaging moves. We saw how popular Pelipper was during the VGC 2017 format and what makes it especially
-            useful is that most Rain teams in the past would struggle with grass types since the flying typing adds a
-            new dynamic to the interaction.<br><br>
-
-            -Swampert has received a major buff in the way Mega Evolved Pokemon interacts with weather upon Mega
-            Evolving. You can check out this video for more info, but what happens is once Swampert Mega Evolves in the
-            rain, it automatically gains the Swift Swim ability and the speed boost in the rain. This alone makes it a
-            terrifying Pokemon as Swampert can become the fastest Pokemon on the field and threaten with some big
-            damage. Check out this pastebin for sample sets.</a>
-
-    </div>
-    <div id="footer-container"></div>
+            <div id="footer-container"></div>
 
 </body>
 <script src="/jscript/load_footer.js"></script>
