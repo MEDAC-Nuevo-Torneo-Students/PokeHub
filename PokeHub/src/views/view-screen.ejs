@@ -12,19 +12,18 @@
     <script src="/jscript/go_to_links.js"></script>
     <script src="/jscript/dark-mode.js"></script> 
     <script src="/jscript/menu-perfil.js"></script> 
+    <script src="/jscript/load_pokeinfo.js"></script>
     <link rel="stylesheet" href="/css/header_abierto.css">
     <link rel="stylesheet" href="/css/footer_abierto.css">
     <div id="header-container"></div>
 </head>
 
 <body>
+    <% datos.forEach(function(dato) { %>
     <div class="container">
         <div class="head">
             <div class="pokemon-card" id="pokemon1">
-                
-                <div class="frame"><img id="pokemonImage"
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
-                        height="100%"></div>
+                <div class="frame" poke-id="<%= dato.Pokemon1_id_pokemon %>"><a><img src="" alt=""></a></div>
                         <div class="pokemon-details">
                             <ul class="pokemon-list">
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png"> <span>Swampert</span></li>
@@ -86,6 +85,7 @@
                 </div>
 
             </div>
+            <% }); %>
 
             <div class="container">
                 <div class="head">
@@ -436,7 +436,7 @@
                 <a>Import</a>
             </div>
             <div class="team-card">
-               <a>Rain Team</a>
+                <a>Rain Team</a>
             </div>
 
             
