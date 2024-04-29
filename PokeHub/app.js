@@ -91,6 +91,10 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
+app.get('/view', (req, res) => {
+    res.render('view-screen');
+});
+
 
 
 
