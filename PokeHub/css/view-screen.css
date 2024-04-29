@@ -20,8 +20,9 @@ body {
     display: flex;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 85px; 
-    width: 620px; /* Reducido el ancho */
+    width: 620px; 
     margin-top: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .frame{
@@ -143,7 +144,6 @@ frame img {
     height: 25px;
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 
@@ -161,7 +161,6 @@ frame img {
     height: 25px;
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     
 
