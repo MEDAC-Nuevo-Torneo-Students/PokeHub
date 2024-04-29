@@ -180,6 +180,6 @@ frame img {
     width: 785px;
     margin-left: 58rem;
     overflow-y: auto; 
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra interna */
-    border: 2px solid #ccc; /* Color y grosor del borde */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ccc; 
 }
