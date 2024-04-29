@@ -17,40 +17,42 @@
     <link rel="stylesheet" href="/css/footer_abierto.css">
 
     <div id="header-container"></div>
+
 </head>
 
 <body>
     <div id = "espacio"></div>
+    
     <% datos.forEach(function(dato) { %>
             <div class="container">
                 <div class="head">
                     <div class="pokemon-card">
                         <div class="frame"><img id="pokemonImage"
-                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png"
+                                src="<%= dato.pokemon_photo %>" 
                                 height="100%"></div>
                         <div class="pokemon-details">
                             <ul class="pokemon-list">
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png">
-                                    <span>Swampert</span></li>
+                                    <span><%= dato.id_pokemon %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                                    <span>Swampertite</span></li>
+                                    <span><%= dato.id_item %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png">
-                                    <span>Swift Swim</span></li>
+                                    <span><%= dato.id_ability %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png">
-                                    <span>Jolly</span></li>
+                                    <span><%= dato.id_nature %></span></li>
                             </ul>
                         </div>
 
                         <div class="details-column">
                             <ul class="pokemon-list">
                                 <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png">
-                                    <span>Waterfall</span></li>
+                                    <span><%= dato.id_move_1 %></span></li>
                                 <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png">
-                                    <span>Earthquake</span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> <span>Ice
-                                        Punch</span></li>
+                                    <span><%= dato.id_move_2 %></span></li>
+                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> 
+                                    <span><%= dato.id_move_3 %></span></li>
                                 <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png">
-                                    <span>Protect</span></li>
+                                    <span><%= dato.id_move_4 %></span></li>
                             </ul>
                         </div>
                         <div class="stats">
@@ -66,21 +68,21 @@
                                 </tr>
                                 <tr>
                                     <th>IVs</th>
-                                    <td><%= dato.Pokemon1_hp_ivs %></td>
-                                    <td><%= dato.Pokemon1_atk_ivs %></td>
-                                    <td><%= dato.Pokemon1_def_ivs %></td>
-                                    <td><%= dato.Pokemon1_spa_ivs %></td>
-                                    <td><%= dato.Pokemon1_spd_ivs %></td>
-                                    <td><%= dato.Pokemon1_spe_ivs %></td>
+                                    <td><%= dato.hp_ivs %></td>
+                                    <td><%= dato.atk_ivs %></td>
+                                    <td><%= dato.def_ivs %></td>
+                                    <td><%= dato.spa_ivs %></td>
+                                    <td><%= dato.spd_ivs %></td>
+                                    <td><%= dato.spe_ivs %></td>
                                 </tr>
                                 <tr>
                                     <th>EVs</th>
-                                    <td><%= dato.Pokemon1_hp_evs %></td>
-                                    <td><%= dato.Pokemon1_atk_evs %></td>
-                                    <td><%= dato.Pokemon1_def_evs %></td>
-                                    <td><%= dato.Pokemon1_spa_evs %></td>
-                                    <td><%= dato.Pokemon1_spd_evs %></td>
-                                    <td><%= dato.Pokemon1_spe_evs %></td>
+                                    <td><%= dato.hp_evs %></td>
+                                    <td><%= dato.atk_evs %></td>
+                                    <td><%= dato.def_evs %></td>
+                                    <td><%= dato.spa_evs %></td>
+                                    <td><%= dato.spd_evs %></td>
+                                    <td><%= dato.spe_evs %></td>
                                 </tr>
                                 <tr>
                                     <th>Total</th>
@@ -99,8 +101,6 @@
             </div>
 
             <% }); %>
-            <!-- Repetir la estructura de la tarjeta para cada Pokémon -->
-            </div>
             <div class="right-panel">
                 <div class="user-card">
                     <i>Jjrajjr</i>

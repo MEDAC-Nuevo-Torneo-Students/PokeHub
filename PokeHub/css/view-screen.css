@@ -110,12 +110,12 @@ frame img {
     font-size: 12px;
     display: flex;
     align-items: center;
-    
 
 }
 
-.stats table{
-    margin-left: 1rem;
+.stats th, td{
+    padding-left: 1rem;
+    
 }
 
 .negrita {
@@ -126,7 +126,7 @@ frame img {
     width: 30%;
     padding: 0 20px;
     margin-left: 56vw;
-    margin-top: -5rem;
+    margin-top: -44rem;
     display: flex;
     flex-direction: row;
     
