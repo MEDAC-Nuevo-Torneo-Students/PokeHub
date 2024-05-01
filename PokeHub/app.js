@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const mysql = require('mysql');
 const async = require('async');
@@ -10,6 +11,14 @@ const Swal = require('sweetalert2');
 const app = express();
 const port = 3000;
 
+app.use(express.static(__dirname));
+
+app.use(session({
+    secret:'secret',
+    resave:true,
+    saveUninitialized:true
+}))
+
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
@@ -18,6 +27,105 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 
 const connection = require('./db');
 
+// Firsr routes
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+//  Auth
+app.post('/auth', async (req,res)=>{
+    const user = req.body.user;
+    const pass = req.body.pass;
+    
+    if(user && pass) {
+        connection.query('SELECT * FROM user_info WHERE nickname = ?', [user], async (error, results)=>{
+            if(error) {
+                console.error(error);
+                res.status(500).send('Error interno del servidor');
+                return;
+            }
+
+            if(results.length === 0 || pass !== results[0].user_password){
+                res.render('login', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage:"Usuario y/o password incorrectas",
+                    alertIcon:'error',
+                    showConfirmButton: false,
+                    timer:1500,
+                    ruta: 'login'
+                });
+            } else {
+                req.session.loggedin = true;
+                res.render('login', {
+                    alert: true,
+                    alertTitle: "Connection",
+                    alertMessage:"¡Successful Connection!",
+                    alertIcon:'success',
+                    showConfirmButton: false,
+                    timer:3500,
+                    ruta: 'home'
+                });
+            }
+        });
+    } else {
+        res.render('login', {
+            alert: true,
+            alertTitle: "Advertencia",
+            alertMessage:"¡Por favor ingrese un usuario y/o!",
+            alertIcon:'success',
+            showConfirmButton: false,
+            timer:3500,
+            ruta: 'login'
+        });
+    }
+});
+// Register
+app.post('/register', async (req,res)=> {
+    const user = req.body.user;
+    const email = req.body.email;
+    const pass = req.body.pass;
+    const description = ""
+    const active = "1"
+    
+    connection.query('INSERT INTO user_info SET ?', {nickname:user, email:email, user_password:pass, description:description, active:active }, async (error,results)=>{
+        if(error) {
+            res.render('register', {
+                alert: true,
+                alertTitle: "Error",
+                alertMessage:"Ya existe un usuario con este username o email",
+                alertIcon:'error',
+                showConfirmButton: false,
+                timer:3500,
+                ruta: 'login'
+            });
+            console.log(error);
+        }else{
+            res.render('register', {
+                alert: true,
+                alertTitle: "Registration",
+                alertMessage:"¡Successful Registration!",
+                alertIcon:'success',
+                showConfirmButton:false,
+                timer:3500,
+                ruta: 'login'
+            });
+        }
+    })
+})
+
+// Logout
+app.get('/logout',  (req, res) => {
+    req.session.destroy(()=> {
+        res.redirect('/login')
+    })
+})
+
+// Auth pages
 app.get('/home', (req, res) => {
     const sqlQuery = `SELECT t.*, 
                         pb1.id AS Pokemon1_id, pb1.id_pokemon AS Pokemon1_id_pokemon, pb1.gender AS Pokemon1_gender, 
@@ -70,22 +178,28 @@ app.get('/home', (req, res) => {
                     INNER JOIN user_info ui ON t.id_user = ui.id`;
                     
 
-    connection.query(sqlQuery, (err, results) => {
-        if (err) {
-            console.error('Error al realizar la consulta:', err);
-            res.status(500).send('Error interno del servidor');
-        } else {
-            res.render('home', { datos: results });
-        }
-    });
-});  
-app.get('/', (req, res) => {
-    res.render('index');
-});
+                    connection.query(sqlQuery, (err, results) => {
+                        if (err) {
+                            console.error('Error executing query:', err);
+                            res.status(500).send('Internal Server Error');
+                        }
+                
+                        if (req.session.loggedin) {
+                            res.render('home', { datos: results});
+                        } else {
+                            res.render('login', {
+                                alert: true,
+                                alertTitle: "Error",
+                                alertMessage:"Tienes que iniciar sesión para poder acceder",
+                                alertIcon:'error',
+                                showConfirmButton: false,
+                                timer:3500,
+                                ruta: 'login'
+                            });
+                        }
+                    });
+                });
 
-app.get('/login', (req, res) => {
-    res.render('login');
-});
 
 app.get('/view', (req, res) => {
     const sqlQuery = `SELECT 
@@ -114,103 +228,22 @@ WHERE
         if (err) {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
+        } 
+        if (req.session.loggedin) {
+            res.render('view-screen', { datos: results});
         } else {
-            res.render('view-screen', { datos: results });
-        }
-    });
-});
-
-
-
-
-
-app.post('/register', async (req,res)=> {
-    const user = req.body.user;
-    const email = req.body.email;
-    const pass = req.body.pass;
-    const description = ""
-    const active = "1"
-    connection.query('INSERT INTO user_info SET ?', {nickname:user, email:email, user_password:pass, description:description, active:active }, async (error,results)=>{
-        if(error) {
-            res.render('register', {
+            res.render('login', {
                 alert: true,
                 alertTitle: "Error",
-                alertMessage:"Ya existe un usuario con este username o email",
+                alertMessage:"Tienes que iniciar sesión para poder acceder",
                 alertIcon:'error',
                 showConfirmButton: false,
                 timer:3500,
                 ruta: 'login'
-            });
-            console.log(error);
-        }else{
-            res.render('register', {
-                alert: true,
-                alertTitle: "Registration",
-                alertMessage:"¡Successful Registration!",
-                alertIcon:'success',
-                showConfirmButton:false,
-                timer:3500,
-                ruta: 'login'
-            });
-        }
-    })
-})
-
-
-//  Auth
-app.post('/auth', async (req,res)=>{
-    const user = req.body.user;
-    const pass = req.body.pass;
-    
-    if(user && pass) {
-        connection.query('SELECT * FROM user_info WHERE nickname = ?', [user], async (error, results)=>{
-            if(error) {
-                console.error(error);
-                res.status(500).send('Error interno del servidor');
-                return;
-            }
-
-            if(results.length === 0 || pass !== results[0].user_password){
-                res.render('login', {
-                    alert: true,
-                    alertTitle: "Error",
-                    alertMessage:"Usuario y/o password incorrectas",
-                    alertIcon:'error',
-                    showConfirmButton: false,
-                    timer:1500,
-                    ruta: 'login'
-                });
-            } else {
-                res.render('login', {
-                    alert: true,
-                    alertTitle: "Connection",
-                    alertMessage:"¡Successful Connection!",
-                    alertIcon:'success',
-                    showConfirmButton: false,
-                    timer:3500,
-                    ruta: 'home'
-                });
-            }
-        });
-    } else {
-        res.status(400).send('Faltan credenciales de usuario o contraseña');
-    }
+            })};
+    });
 });
 
-
-
-app.use(express.static(__dirname));
-
-
-
-
-
-const session = require('express-session')
-app.use(session({
-    secret:'secret',
-    resave:true,
-    saveUninitialized:true
-}))
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);

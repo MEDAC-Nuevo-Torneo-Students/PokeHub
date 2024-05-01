@@ -50,6 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 enableDarkMode();
             }
         });
-    }, 50); // Espera 50 ms antes de ejecutar la función
+    }, 80); // Espera 100 ms antes de ejecutar la función
 });
 
