@@ -33,26 +33,26 @@
                         <div class="pokemon-details">
                             <ul class="pokemon-list">
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png">
-                                    <span><%= dato.id_pokemon %></span></li>
+                                    <span id = "name"><%= dato.id_pokemon %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                                    <span><%= dato.id_item %></span></li>
+                                    <span id = "item"><%= dato.id_item %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png">
-                                    <span><%= dato.id_ability %></span></li>
+                                    <span id = "ability"><%= dato.id_ability %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png">
-                                    <span><%= dato.id_nature %></span></li>
+                                    <span id = "nature"><%= dato.id_nature %></span></li>
                             </ul>
                         </div>
 
                         <div class="details-column">
                             <ul class="pokemon-list">
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png">
-                                    <span><%= dato.id_move_1 %></span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png">
-                                    <span><%= dato.id_move_2 %></span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> 
-                                    <span><%= dato.id_move_3 %></span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png">
-                                    <span><%= dato.id_move_4 %></span></li>
+                                <li><img data-id="<%= dato.id_move_1 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_1 %></span></li>
+                                <li><img data-id="<%= dato.id_move_2 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_2 %></span></li>
+                                <li><img data-id="<%= dato.id_move_3 %>" id="imgmove"> 
+                                    <span id = "move"><%= dato.id_move_3 %></span></li>
+                                <li><img data-id="<%= dato.id_move_4 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_4 %></span></li>
                             </ul>
                         </div>
                         <div class="stats">
@@ -138,9 +138,112 @@
 
             </div>
             <div id="footer-container"></div>
+            <script>
+                async function cargarNombresPokemon() {
+            const spans = document.querySelectorAll('.pokemon-list #name');
+            for (const span of spans) {
+                const id = span.textContent.trim();
+                try {
+                    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+                    const data = await response.json();
+                    const nombre = data.name;
+                    span.textContent = nombre;
+                } catch (error) {
+                    console.error(`Error al cargar el nombre del Pokémon ${id}:`, error);
+                    span.textContent = "Desconocido";
+                }
+            }
+        }
+            
+                async function cargarAbilitysPokemon() {
+                    const spans = document.querySelectorAll('.pokemon-list #ability');
+            for (const span of spans) {
+                const id = span.textContent.trim();
+                try {
+                    const response = await fetch(`https://pokeapi.co/api/v2/ability/${id}`);
+                    const data = await response.json();
+                    const nombre = data.name;
+                    span.textContent = nombre;
+                } catch (error) {
+                    console.error(`Error al cargar el nombre del Pokémon ${id}:`, error);
+                    span.textContent = "Desconocido";
+                }
+            }
+                }
+                async function cargarItemsPokemon() {
+                    const spans = document.querySelectorAll('.pokemon-list #item');
+            for (const span of spans) {
+                const id = span.textContent.trim();
+                try {
+                    const response = await fetch(`https://pokeapi.co/api/v2/item/${id}`);
+                    const data = await response.json();
+                    const nombre = data.name;
+                    span.textContent = nombre;
+                } catch (error) {
+                    console.error(`Error al cargar el nombre del Pokémon ${id}:`, error);
+                    span.textContent = "Desconocido";
+                }
+            }
+                }
+                async function cargarMovesPokemon() {
+                    const spans = document.querySelectorAll('.pokemon-list #move');
+            for (const span of spans) {
+                const id = span.textContent.trim();
+                try {
+                    const response = await fetch(`https://pokeapi.co/api/v2/move/${id}`);
+                    const data = await response.json();
+                    const nombre = data.name;
+                    span.textContent = nombre;
+                } catch (error) {
+                    console.error(`Error al cargar el nombre del Pokémon ${id}:`, error);
+                    span.textContent = "Desconocido";
+                }
+            }
+                }
+                
+                async function cargarNaturesPokemon() {
+                    const spans = document.querySelectorAll('.pokemon-list #nature');
+            for (const span of spans) {
+                const id = span.textContent.trim();
+                try {
+                    const response = await fetch(`https://pokeapi.co/api/v2/nature/${id}`);
+                    const data = await response.json();
+                    const nombre = data.name;
+                    span.textContent = nombre;
+                } catch (error) {
+                    console.error(`Error al cargar el nombre del Pokémon ${id}:`, error);
+                    span.textContent = "Desconocido";
+                }
+            }
+                }
+                async function cargarImagenesPokemon() {
+            const imgs = document.querySelectorAll('.pokemon-card #imgmove');
+            for (const img of imgs) {
+                const id = img.getAttribute('data-id');
+                try {
+                    const response = await fetch(`https://pokeapi.co/api/v2/move/${id}`);
+                    const data = await response.json();
+                    const imagenUrl = data.type.name;
+                    img.src = "https://www.serebii.net/pokedex-sv/type/icon/"+imagenUrl+".png";
+                } catch (error) {
+                    console.error(`Error al cargar la imagen del Pokémon ${id}:`, error);
+                    // Aquí puedes manejar el error como prefieras, por ejemplo, mostrar una imagen de error genérica.
+                    img.src = 'imagen_error.png';
+                }
+            }
+        }
 
+        cargarImagenesPokemon();
+        cargarItemsPokemon();
+        cargarNombresPokemon();
+        cargarAbilitysPokemon();
+        cargarMovesPokemon();
+        cargarNaturesPokemon();
+            
+            </script>
 </body>
 <script src="/jscript/load_footer.js"></script>
 <script src="/jscript/pokebal_animation.js"></script>
+
 
 </html>

@@ -219,9 +219,7 @@ FROM
     t.id_Pokemon5_build = pb.id OR 
     t.id_Pokemon6_build = pb.id
 WHERE 
-    t.id = 2;
-;
-`;
+    t.id = 2;`;
                     
 
     connection.query(sqlQuery, (err, results) => {
