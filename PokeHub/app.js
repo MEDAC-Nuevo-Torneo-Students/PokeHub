@@ -207,7 +207,7 @@ app.get('/view', (req, res) => {
 
     let sqlQuery = `SELECT 
     t.id as team_id,
-    t.id_user, 
+    u.nickname, 
     t.team_name,
     t.description,
     pb.*,
@@ -220,16 +220,33 @@ FROM
     t.id_Pokemon3_build = pb.id OR 
     t.id_Pokemon4_build = pb.id OR 
     t.id_Pokemon5_build = pb.id OR 
-    t.id_Pokemon6_build = pb.id;`;
-                    
+    t.id_Pokemon6_build = pb.id
+    inner join user_info u on
+   	t.id_user = u.id;`;
 
+    
     connection.query(sqlQuery, (err, results) => {
+        let team_description;
+        results.forEach(function(dato){
+            if(dato.team_id == id) {
+                team_description = dato.description;
+            }});
+        let team_name;
+        results.forEach(function(dato){
+            if(dato.team_id == id) {
+                team_name = dato.team_name;
+            }});
+        let nickname;
+        results.forEach(function(dato){
+        if(dato.team_id == id) {
+            nickname = dato.nickname;
+        }});
         if (err) {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
         } 
         if (req.session.loggedin) {
-            res.render('view-screen', { datos: results, id: id});
+            res.render('view-screen', { datos: results, id: id, nickname: nickname, team_name: team_name, team_description: team_description});
         } else {
             res.render('login', {
                 alert: true,
