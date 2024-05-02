@@ -29,11 +29,21 @@ const connection = require('./db');
 
 // Firsr routes
 app.get('/', (req, res) => {
-    res.render('index');
+    if (req.session.loggedin) {
+        res.redirect('/home')
+    }
+    else {
+        res.render('index');
+    }
 });
 
 app.get('/login', (req, res) => {
-    res.render('login');
+    if (req.session.loggedin) {
+        res.redirect('/home')
+    }
+    else {
+        res.render('login');
+    }
 });
 
 //  Auth
