@@ -71,6 +71,7 @@ app.post('/auth', async (req,res)=>{
                 });
             } else {
                 req.session.loggedin = true;
+                req.session.user =  user;
                 res.render('login', {
                     alert: true,
                     alertTitle: "Connection",
@@ -137,6 +138,7 @@ app.get('/logout',  (req, res) => {
 
 // Auth pages
 app.get('/home', (req, res) => {
+    const user = req.session.user;
     const sqlQuery = `SELECT t.*, 
                         pb1.id AS Pokemon1_id, pb1.id_pokemon AS Pokemon1_id_pokemon, pb1.gender AS Pokemon1_gender, 
                         pb1.id_ability AS Pokemon1_id_ability, pb1.id_item AS Pokemon1_id_item, pb1.id_nature AS Pokemon1_id_nature, 
@@ -195,7 +197,7 @@ app.get('/home', (req, res) => {
                         }
                 
                         if (req.session.loggedin) {
-                            res.render('home', { datos: results});
+                            res.render('home', { datos: results, user: user});
                         } else {
                             res.render('login', {
                                 alert: true,
