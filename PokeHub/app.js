@@ -202,7 +202,7 @@ app.get('/home', (req, res) => {
 
 
 app.get('/view', (req, res) => {
-    const sqlQuery = `SELECT 
+    let sqlQuery = `SELECT 
     t.id as team_id,
     t.id_user, 
     t.team_name,
@@ -217,9 +217,7 @@ FROM
     t.id_Pokemon3_build = pb.id OR 
     t.id_Pokemon4_build = pb.id OR 
     t.id_Pokemon5_build = pb.id OR 
-    t.id_Pokemon6_build = pb.id
-WHERE 
-    t.id = 2;`;
+    t.id_Pokemon6_build = pb.id;`;
                     
 
     connection.query(sqlQuery, (err, results) => {

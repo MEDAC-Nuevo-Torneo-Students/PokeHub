@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="/css/footer_abierto.css">
 
     <div id="header-container"></div>
-
+    
 </head>
 
 <body>
     <div id = "espacio"></div>
     
-    <% datos.forEach(function(dato) { %>
+    <% datos.forEach(function(dato) {
+        if (dato.team_id == 3) {%>
             <div class="container">
                 <div class="head">
                     <div class="pokemon-card">
@@ -100,7 +101,7 @@
 
             </div>
 
-            <% }); %>
+            <% }}); %>
             <div class="right-panel">
                 <div class="user-card">
                     <i>Jjrajjr</i>
@@ -228,7 +229,7 @@
                 } catch (error) {
                     console.error(`Error al cargar la imagen del Pokémon ${id}:`, error);
                     // Aquí puedes manejar el error como prefieras, por ejemplo, mostrar una imagen de error genérica.
-                    img.src = 'imagen_error.png';
+                    img.src = 'src\img\MissingNo.png';
                 }
             }
         }
