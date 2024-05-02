@@ -7,7 +7,6 @@
     <title>Equipo Pokémon</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/view-screen.css">
-    <link rel="stylesheet" href="/css/header_abierto.css">
     <script src="/jscript/load_header.js"></script>
     <script src="/jscript/go_to_links.js"></script>
     <script src="/jscript/dark-mode.js"></script>
@@ -122,7 +121,7 @@
             </div>
             <div id="footer-container"></div>
 <script>
-                async function cargarNombresPokemon() {
+            async function cargarNombresPokemon() {
             const spans = document.querySelectorAll('.pokemon-list #name');
             for (const span of spans) {
                 const id = span.textContent.trim();
@@ -137,9 +136,8 @@
                 }
             }
         }
-            
-                async function cargarAbilitysPokemon() {
-                    const spans = document.querySelectorAll('.pokemon-list #ability');
+            async function cargarAbilitysPokemon() {
+            const spans = document.querySelectorAll('.pokemon-list #ability');
             for (const span of spans) {
                 const id = span.textContent.trim();
                 try {
@@ -153,8 +151,8 @@
                 }
             }
                 }
-                async function cargarItemsPokemon() {
-                    const spans = document.querySelectorAll('.pokemon-list #item');
+            async function cargarItemsPokemon() {
+            const spans = document.querySelectorAll('.pokemon-list #item');
             for (const span of spans) {
                 const id = span.textContent.trim();
                 try {
@@ -168,8 +166,8 @@
                 }
             }
                 }
-                async function cargarMovesPokemon() {
-                    const spans = document.querySelectorAll('.pokemon-list #move');
+            async function cargarMovesPokemon() {
+            const spans = document.querySelectorAll('.pokemon-list #move');
             for (const span of spans) {
                 const id = span.textContent.trim();
                 try {
@@ -184,8 +182,8 @@
             }
                 }
                 
-                async function cargarNaturesPokemon() {
-                    const spans = document.querySelectorAll('.pokemon-list #nature');
+            async function cargarNaturesPokemon() {
+            const spans = document.querySelectorAll('.pokemon-list #nature');
             for (const span of spans) {
                 const id = span.textContent.trim();
                 try {
@@ -199,7 +197,7 @@
                 }
             }
                 }
-                async function cargarImagenesPokemon() {
+            async function cargarImagenesPokemon() {
             const imgs = document.querySelectorAll('.pokemon-card #imgmove');
             for (const img of imgs) {
                 const id = img.getAttribute('data-id');
@@ -221,7 +219,7 @@
         cargarAbilitysPokemon();
         cargarMovesPokemon();
         cargarNaturesPokemon();
-            
+
 </script>
 </body>
 <script src="/jscript/load_footer.js"></script>
