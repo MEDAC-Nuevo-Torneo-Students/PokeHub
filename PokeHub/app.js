@@ -202,6 +202,9 @@ app.get('/home', (req, res) => {
 
 
 app.get('/view', (req, res) => {
+    // Obtener la ID de la URL
+    const id = req.query.id;
+
     let sqlQuery = `SELECT 
     t.id as team_id,
     t.id_user, 
@@ -226,7 +229,7 @@ FROM
             res.status(500).send('Error interno del servidor');
         } 
         if (req.session.loggedin) {
-            res.render('view-screen', { datos: results});
+            res.render('view-screen', { datos: results, id: id});
         } else {
             res.render('login', {
                 alert: true,
