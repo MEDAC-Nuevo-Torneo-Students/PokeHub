@@ -104,42 +104,24 @@
             <% }}); %>
             <div class="right-panel">
                 <div class="user-card">
-                    <i>Jjrajjr</i>
+                    <i><%= nickname%></i>
                 </div>
                 <div class="import-card">
                     <a>Import</a>
                 </div>
                 <div class="team-card">
-                    <a>Rain Team</a>
+                    <a><%= team_name%></a>
                 </div>
             </div>
 
 
             </div>
             <div class="team-description">
-                <a>-Pelipper is the newest Drizzle user in the games, as it has gained the Drizzle ability in the 7th
-                    Generation. While Politoed is more defensive in nature, Pelipper is a rain setter that barring from
-                    using
-                    Tailwind to increase the speed of its teammates, will spend the rest of its time on the field going
-                    for
-                    damaging moves. We saw how popular Pelipper was during the VGC 2017 format and what makes it
-                    especially
-                    useful is that most Rain teams in the past would struggle with grass types since the flying typing
-                    adds a
-                    new dynamic to the interaction.<br><br>
-
-                    -Swampert has received a major buff in the way Mega Evolved Pokemon interacts with weather upon Mega
-                    Evolving. You can check out this video for more info, but what happens is once Swampert Mega Evolves
-                    in the
-                    rain, it automatically gains the Swift Swim ability and the speed boost in the rain. This alone
-                    makes it a
-                    terrifying Pokemon as Swampert can become the fastest Pokemon on the field and threaten with some
-                    big
-                    damage. Check out this pastebin for sample sets.</a>
+                <a><%= team_description%></a>
 
             </div>
             <div id="footer-container"></div>
-            <script>
+<script>
                 async function cargarNombresPokemon() {
             const spans = document.querySelectorAll('.pokemon-list #name');
             for (const span of spans) {
@@ -228,7 +210,6 @@
                     img.src = "https://www.serebii.net/pokedex-sv/type/icon/"+imagenUrl+".png";
                 } catch (error) {
                     console.error(`Error al cargar la imagen del Pokémon ${id}:`, error);
-                    // Aquí puedes manejar el error como prefieras, por ejemplo, mostrar una imagen de error genérica.
                     img.src = 'src\img\MissingNo.png';
                 }
             }
@@ -241,7 +222,7 @@
         cargarMovesPokemon();
         cargarNaturesPokemon();
             
-            </script>
+</script>
 </body>
 <script src="/jscript/load_footer.js"></script>
 <script src="/jscript/pokebal_animation.js"></script>
