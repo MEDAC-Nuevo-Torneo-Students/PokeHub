@@ -23,27 +23,27 @@
     </header>
     <main>
         <div class="wrapper">
-            <form action="" id="form">
+            <form action="register" method="POST" id="form">
                 <h1>Sign Up</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="user" placeholder="Username" required>
                     <i class='bx bxs-user' ></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                     <i class='bx bxs-envelope'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="pass" placeholder="Password" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
 
-                <div class="input-box">
+            <!--   <div class="input-box">
                     <input type="password" placeholder="Repeat Password" required>
                     <i class='bx bxs-lock' ></i>
-                </div>
+                </div> -->
 
         
 
@@ -66,6 +66,7 @@
                     document.getElementById('footer-container').innerHTML = html;
                 });
         </script> 
+        
     </footer>
     <script src="/jscript/script.js"></script>
 </body>

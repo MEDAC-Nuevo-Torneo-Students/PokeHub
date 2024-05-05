@@ -7,24 +7,42 @@
   <link rel="icon" href="/img/logo.png" type="png">
   <link rel="stylesheet" href="/css/header_abierto.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-   
+
 </head>
 <body>
   
+  
   <main>
       <div class="header" id="header">
-        <img src="https://cdn.glitch.global/7155ba4e-41e9-433a-83de-c092e924212a/logo.png?v=1710930442324" id="logo">
+        <a href="/home">
+          <img src="/src/img/logo.png" id="logo">
+        </a>
+        
         <button class="circle" id="circle"></button>
         <div class="header-button">
           <button class="switch" id="switch">        
           </button>
-          <div class="icons-user">
+          <div class="icons-user" >
             <i class='bx bx-user-circle'></i>
+            <div class="dropdown" id="dropdown">
+              <!-- Contenido del menú desplegable -->
+              <ul>  
+                  <div class="profile-picture "><img src="/img/dragonite-dropdown.png"></div>
+                  <a id="usuario-dropdown">Hola !</a>
+                  <li><a href="#"><i class='bx bx-user'></i>View Profile</a></li>
+                  <li><a href="#"><i class='bx bx-cog' ></i>Configuration</a></li>
+                  <li><a href="#"><i class='bx bx-star' ></i>Premium Plan</a></li>
+                  <li><a href="/logout"><i class='bx bx-log-out' ></i>Log Out</a></li>
+              </ul>
+          </div>
+            
           </div>  
         </div>
       </div>
       
+      
   </main>  
+  <script src="/jscript/menu-perfil.js"></script>
 </body>
 </html>
 

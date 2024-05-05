@@ -13,6 +13,16 @@
 
 }
 
+.purple-background {
+    background-color: purple;
+   
+}
+.dark{
+    background-color: #333333;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+}
+
 .circle {
     border-radius: 50%;
     background-color: white;
@@ -39,6 +49,102 @@
     transition: opacity 2s ease;
 }
 
+.header-button{
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    margin-right: 2rem; 
+    margin-top: -4.3rem;
+    justify-content: flex-end;
+    
+    
+}
+.icons-user{
+    font-size: 60px;
+    cursor: pointer;
+    opacity: 100;
+    transition: opacity 2s ease;
+    margin-left: 3rem;
+    display: none;
+   
+    
+}
+
+
+
+.icons-user:active{ 
+    transform: translateY(0.1rem);
+    
+}
+
+
+
+.switch{
+    
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    opacity: 100;
+    transition: opacity 2s ease;
+    height: 40px;
+    width: 70px;
+    border-radius: 34px;
+    border: none;
+    background-color: #9a86fd;
+    color: white;
+    opacity: 100;
+    transition: 1s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    margin-top: 0.7rem;
+    display: none;
+    
+    
+}
+
+#moon{
+    margin-left:1rem;
+}
+
+.switch::after{
+   position:absolute;
+   content: "";
+   height: 30px;
+   width: 30px;
+   left: 4px;
+   bottom: 5px;
+   border-radius: 50%;
+   background-color: #fff;
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+
+}  
+ 
+
+.switch.active::after{
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
+    
+}
+
+.switch.active{ 
+    background-color: red;
+    color: black;
+
+
+    
+}
+
+.icons-user.active{
+    opacity: 0;
+}
+
+.icons-moon.active{
+    opacity: 0;
+}
+
 
 
 .header.active {
@@ -53,6 +159,23 @@
 @media screen and (max-width: 768px) {
     #logo {
         height: 8vh;
+    }
+
+    .switch{
+        width: 70px;
+        margin-top: 1rem;
+        
+    }
+    .switch::after{
+        height: 30px;
+        width: 30px;
+        margin-top: 0.2rem;
+        
+        
+    }
+
+    #moon{
+        margin-left: 2rem;
     }
     
 }

@@ -27,6 +27,15 @@
 }
 
 
+.dark-background{
+    background-color: #222222;
+    color: white;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+}
+
+
 .search input{
     display: flex;
     align-items: center;

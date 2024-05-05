@@ -14,8 +14,16 @@
     font-family:'Roboto', sans-serif;
     align-items: center;
     border-right: solid grey 1px;
+    height: 150em;
 }
 
+.dark-background{
+    background-color: #222222;
+    color: white;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+}
 .head{
     display: flex;
     flex-direction: row;
@@ -56,6 +64,7 @@
     padding:10px;
     display: flex;
     justify-content: space-around;
+    
 }
 
 .types img{
@@ -70,13 +79,22 @@
     margin: 1vh;
 }
 
-table {
+table{
     width: 100%;
+    color:#222222;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
 }
 
 th, td {
     padding-left: 1.3vw;
     text-align: left;
+}
+
+h3{
+    color:#222222;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
 }
 
 .move{

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Pokémon</title>
+    <link rel="icon" href="/img/logo_pokeball.png" type="png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/view-screen.css">
+    <script src="/jscript/dark-mode.js"></script>
+    <script src="/jscript/menu-perfil.js"></script>
+    
+    
+    <link rel="stylesheet" href="/css/header_abierto.css">
+    <link rel="stylesheet" href="/css/footer_abierto.css">
+</head>
+
+<body>
+
+    <div id="header-container">
+        <div class="header" id="header">
+            <a href="/home">
+              <img src="/src/img/logo.png" id="logo">
+            </a>
+            
+            <button class="circle" id="circle"></button>
+            <div class="header-button">
+              <button class="switch" id="switch">        
+              </button>
+              <div class="icons-user" >
+                <i class='bx bx-user-circle'></i>
+                <div class="dropdown" id="dropdown">
+                  <!-- Contenido del menú desplegable -->
+                  <ul>  
+                      <div class="profile-picture "><img src="/img/dragonite-dropdown.png"></div>
+                      <a id="usuario-dropdown">¡Bienvenido <%= user %> !</a>
+                      <li><a href="#"><i class='bx bx-user'></i>View Profile</a></li>
+                      <li><a href="#"><i class='bx bx-cog' ></i>Configuration</a></li>
+                      <li><a href="#"><i class='bx bx-star' ></i>Premium Plan</a></li>
+                      <li><a href="/logout"><i class='bx bx-log-out' ></i>Log Out</a></li>
+                  </ul>
+              </div>
+              </div>  
+            </div>
+          </div>
+    </div>
+
+
+    <div id = "espacio"></div>
+    
+    <% datos.forEach(function(dato) {
+        if (dato.team_id == id) {%>
+            <div class="container">
+                <div class="head">
+                    <div class="pokemon-card">
+                        <div class="frame"><img id="pokemonImage"
+                                src="<%= dato.pokemon_photo %>" 
+                                height="100%"></div>
+                        <div class="pokemon-details">
+                            <ul class="pokemon-list">
+                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png">
+                                    <span id = "name"><%= dato.id_pokemon %></span></li>
+                                <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
+                                    <span id = "item"><%= dato.id_item %></span></li>
+                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png">
+                                    <span id = "ability"><%= dato.id_ability %></span></li>
+                                <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png">
+                                    <span id = "nature"><%= dato.id_nature %></span></li>
+                            </ul>
+                        </div>
+
+                        <div class="details-column">
+                            <ul class="pokemon-list">
+                                <li><img data-id="<%= dato.id_move_1 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_1 %></span></li>
+                                <li><img data-id="<%= dato.id_move_2 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_2 %></span></li>
+                                <li><img data-id="<%= dato.id_move_3 %>" id="imgmove"> 
+                                    <span id = "move"><%= dato.id_move_3 %></span></li>
+                                <li><img data-id="<%= dato.id_move_4 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_4 %></span></li>
+                            </ul>
+                        </div>
+                        <div class="stats">
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Hp</th>
+                                    <th>Atk</th>
+                                    <th>Def</th>
+                                    <th>SpA</th>
+                                    <th>SpD</th>
+                                    <th>Spe</th>
+                                </tr>
+                                <tr>
+                                    <th>IVs</th>
+                                    <td><%= dato.hp_ivs %></td>
+                                    <td><%= dato.atk_ivs %></td>
+                                    <td><%= dato.def_ivs %></td>
+                                    <td><%= dato.spa_ivs %></td>
+                                    <td><%= dato.spd_ivs %></td>
+                                    <td><%= dato.spe_ivs %></td>
+                                </tr>
+                                <tr>
+                                    <th>EVs</th>
+                                    <td><%= dato.hp_evs %></td>
+                                    <td><%= dato.atk_evs %></td>
+                                    <td><%= dato.def_evs %></td>
+                                    <td><%= dato.spa_evs %></td>
+                                    <td><%= dato.spd_evs %></td>
+                                    <td><%= dato.spe_evs %></td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td>174</td>
+                                    <td>202</td>
+                                    <td>130</td>
+                                    <td>90</td>
+                                    <td>130</td>
+                                    <td>134</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }}); %>
+            <div class="right-panel">
+                <div class="user-card">
+                    <i><%= nickname%></i>
+                </div>
+                <div class="import-card">
+                    <a>Import</a>
+                </div>
+                <div class="team-card">
+                    <a><%= team_name%></a>
+                </div>
+            </div>
+
+
+            </div>
+            <div class="team-description">
+                <a><%= team_description%></a>
+
+            </div>
+            <div id="footer-container"></div>
+
+</body>
+<script src="/jscript/load_footer.js"></script>
+<script src="/jscript/pokebal_animation.js"></script>
+<script src="/jscript/render_view.js"></script>
+
+
+</html>
