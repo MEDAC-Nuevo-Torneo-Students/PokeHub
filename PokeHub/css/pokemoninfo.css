@@ -1,0 +1,175 @@
+
+.menu-pokeinfo{
+    font-family: "Poppins", sans-serif;
+    color:black;
+    position:absolute;
+    left: 0;
+    top: 0;
+    margin-top: 9rem;
+    width: 30rem;
+    padding-bottom: 3rem;
+    background-color: rgb(217,217,217);
+    display: flex;
+    flex-direction: column;
+    font-family:'Roboto', sans-serif;
+    align-items: center;
+    border-right: solid grey 1px;
+    height: 150em;
+}
+
+.dark-background{
+    background-color: #222222;
+    color: white;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: space-around;
+}
+
+.frame{
+
+    margin: 0.5rem;
+    background-color: white;
+    height: 10rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top:grey solid;
+}
+.frame img{
+    align-items: center;
+    justify-content: center;
+}
+
+.info{
+    width:18rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pair{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:0.5rem;
+}
+
+.types{
+    padding:10px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.types img{
+    height: 2vh;
+}
+
+#stats {
+    height: 12rem;
+    width: 28rem;
+    display:flex;
+    flex-direction: column;
+    margin: 1vh;
+}
+
+table{
+    width: 100%;
+    color:#222222;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+}
+
+th, td {
+    padding-left: 1.3vw;
+    text-align: left;
+}
+
+h3{
+    color:#222222;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+}
+
+.move{
+    width: 28rem;
+    border-radius: 10px;
+    height: 4vh;
+    border-top: rgb(255, 255, 255, 0.4) solid;
+    margin: 0.5vh
+}
+
+ul{
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+    margin: 1vh;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+
+li img{
+    transform: translateY(-25%);
+    height: 4vh;
+}
+
+#water{
+    background-color: #6197FF;
+}
+
+#ground{
+    background-color: #CF7C00;
+}
+
+#ice{
+    background-color: #70C3FF;
+}
+
+#normal{
+    background-color: #A6A5A5;
+}
+li{
+    display: flex;
+}
+
+.import button{
+    border: transparent;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    margin: 1vh;
+    padding: 2vh;
+    height: 5vh;
+    font-weight:bolder;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer
+}
+
+.import button:active{
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+#ivPlus{
+    color:red;
+}
+#ivMinus{
+    color:blue;
+}
+
+.menu-pokeinfo h2 {
+    margin-top: 2rem;
+}
+
+#pokemonName {
+    text-transform: capitalize;
+}

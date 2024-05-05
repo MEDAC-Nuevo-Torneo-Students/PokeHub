@@ -1,0 +1,189 @@
+/* Fuente */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+.menu-chat{
+    font-family: "Poppins", sans-serif;
+    color:black;
+    position:absolute;
+    right: 0;
+    top: 0;
+    margin-top: 32rem;
+    width: 30rem;
+    background-color: #D9D9D9;
+    height: 100rem;
+    padding-bottom: 3rem;
+    border-left: solid grey 1px;
+    
+}
+
+.dark-background{
+    background-color: #222222;
+    color: white;
+    -webkit-transition: 0.4s;
+   transition: 0.4s;
+
+}
+
+
+.messages{
+    text-align: center;
+    align-items: center;
+    margin: 1rem;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;  
+    margin-left: 4.8rem;
+    margin-bottom: 2.2rem;
+    
+}
+
+
+
+.box-message{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-left: -1.1rem;
+    margin-top: 1rem;
+}
+
+.circle-noti{
+    background-color: red; 
+    border-radius: 50%; 
+    width: 1rem; 
+    height: 1rem; 
+    z-index: 1;
+    text-align: center;
+    margin-left: 7rem;
+    position: relative;
+    text-align: center;
+    align-items: center
+}
+.circle-noti p{
+    text-align: center;
+    align-items: center;
+    transform: translateY(-0.2rem);
+}
+
+
+
+
+.box-message i{
+    transform: translateY(-40%);
+    font-size: 40px;
+    margin-top:0.2rem;
+    margin-left: 5rem;
+    
+    z-index: 1;
+
+
+}
+
+.messages-white{
+    color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+
+
+.users{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    color: black;
+    display: flex;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    background-color: white;
+    border-radius: 12px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.users .user_shadow { 
+    background-color: lightgray; 
+    border-radius: 50%; 
+    width: 3vh; 
+    height: 3vh; 
+    z-index:1;
+    left: 0px; 
+    top: 50%; 
+    text-align: center;
+}
+
+.users:active {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
+
+.users i{
+    font-size: 1.2rem;
+    margin-top:0.2rem;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.users #user{
+    font-size: 0.8rem;
+}
+
+.users #description{
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+}
+
+.icon-arrow i{
+    font-size: 35px;  
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    margin-left: -0.1rem;
+}
+
+
+.circle-shadow{
+    background-color: #979797; 
+    border-radius: 50%; 
+    width: 2rem; 
+    height:2rem; 
+    z-index: 2;
+    left: 1px;  
+    margin-left: 14.5rem;
+    margin-top: 2rem;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.circle-shadow:active {
+    transform: translateY(0.1rem);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    
+}
+.cirlce-arrow{
+
+    background-color: red; 
+    border-radius: 50%; 
+    width: 1vh; 
+    height: 1vh; 
+    z-index: 2;
+    left: 0px;  
+    text-align: center;
+    align-items: center;
+    transform: translateY(-2.5rem);
+    margin-left: 1.4em;
+    
+}
+
+
+
+
+

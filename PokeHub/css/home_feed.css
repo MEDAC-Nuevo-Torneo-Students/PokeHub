@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+html {
+    font-size: 16px; 
+}
+
+#feed {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 10rem;
+    
+}
+
+.feed_boxes {
+    margin-top: 5rem;
+}
+
+.feed_box {
+    background: #D9D9D9;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    border-radius: 10px;
+    margin: 1.5rem;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+
+.pokemon_imgs {
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+
+.pokeframe{
+    margin-top: 0;
+    margin: 0.3rem;
+    background-color: white;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+
+.pokeframe:hover {
+    background:rgba(253, 0, 0, 0.11); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); 
+}
+
+.pokeframe.clicked {
+    box-shadow: 
+    inset 0px -4px 6px rgba(0, 0, 0, 0.1), 
+    inset 0px 4px 6px rgba(0, 0, 0, 0.4); 
+    background:rgba(253, 0, 0, 0.11);
+    transform: translateY(3px); 
+}
+
+
+
+.pokemon_imgs img {
+    width: 4rem;
+
+}
+
+.feedText {
+    display: flex;
+    position: relative;
+    font-weight: 600;
+    
+}
+
+.teamName {
+    padding-left: 1rem;
+}
+
+.username {
+    position: absolute;
+    right: 0;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+
+.bottom_row button {
+    color: white;
+    background-color: #d60a0a;
+    border: none;
+    border-radius: 10px;
+    position: absolute; 
+    bottom: 1.3rem; 
+    right: 1rem; 
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 1.5rem;
+    width: 5rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bottom_row button:active {
+    background-color: #b30000; 
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
+
+
+.bottom_row {
+    display: flex;
+    position: relative;
+}
+
+.interactions {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 40px;
+    height: 2rem;
+    margin: -2rem 1rem 1rem 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.interactions div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    padding: 0rem 0.6rem;
+}
+
+.interactions div p {
+    padding-left: 0.3rem;
+}
+
+.likes i:hover {
+    color: #b30000; 
+    cursor: pointer;
+}
+
+.shared i:hover {
+    color: #28a745;
+    cursor: pointer;
+}
+
+.comments i:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.feed_selector {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
+    top: 9rem;
+    width: 100%;
+
+}
+
+.feed_selector button {
+    
+    height: 3rem;
+    width: 10rem;
+    background: #D9D9D9;
+    border-radius: 10px;
+    margin: 2rem 5rem;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: black;
+    
+}
+
+.feed_selector button:active {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
+
+#post button {
+    border: none;
+    background-color: #d60a0a;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 2.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    position: fixed;    
+    right: 34rem;
+    bottom: 10rem;
+    
+}
+
+#post button:active {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); 
+    transform: translateY(2px); 
+}
+
+@media screen and (max-width: 768px) {
+    #post button {
+        right: 1rem;
+    }
+
+    .feed_selector {
+        margin-top: 3rem;
+    }
+
+    #feed {
+        margin-top: 12rem;
+    }
+    
+    html {
+        font-size: 50%; 
+    }
+
+    #post button {
+
+        border-radius: 4px;
+    }
+
+    .pokeframe {
+        border-radius: 8px;
+    }
+
+
+
+} 

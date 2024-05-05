@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeHub</title>
+    <link rel="icon" href="/img/logo_pokeball.png" type="png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header_abierto.css">
+    <link rel="stylesheet" href="/css/footer_abierto.css">
+    <link rel="stylesheet" href="/css/home_suggests.css">
+    <link rel="stylesheet" href="/css/home_chat.css">
+    <link rel="stylesheet" href="/css/home_feed.css">
+    <link rel="stylesheet" href="/css/barra_home_movil.css">
+    <script src="/jscript/load_pokeinfo.js"></script>
+    <script src="/jscript/load_suggest.js"></script>
+    <script src="/jscript/load_chat.js"></script>
+    <script src="/jscript/load_footer_movil.js"></script>
+    <script src="/jscript/dark-mode.js"></script> 
+    <script src="/jscript/menu-perfil.js"></script> 
+    
+    
+</head>
+<body>
+    <header>
+        <div id="header-container">
+                <div class="header" id="header">
+                  <a href="/home">
+                    <img src="/src/img/logo.png" id="logo">
+                  </a>
+                  
+                  <button class="circle" id="circle"></button>
+                  <div class="header-button">
+                    <button class="switch" id="switch">        
+                    </button>
+                    <div class="icons-user" >
+                      <i class='bx bx-user-circle'></i>
+                      <div class="dropdown" id="dropdown">
+                        <!-- Contenido del menú desplegable -->
+                        <ul>  
+                            <div class="profile-picture "><img src="/img/dragonite-dropdown.png"></div>
+                            <a id="usuario-dropdown">¡Bienvenido <%= user %> !</a>
+                            <li><a href="#"><i class='bx bx-user'></i>View Profile</a></li>
+                            <li><a href="#"><i class='bx bx-cog' ></i>Configuration</a></li>
+                            <li><a href="#"><i class='bx bx-star' ></i>Premium Plan</a></li>
+                            <li><a href="/logout"><i class='bx bx-log-out' ></i>Log Out</a></li>
+                        </ul>
+                    </div>
+                    </div>  
+                  </div>
+                </div>
+        </div>
+    </header>
+    <main>
+        
+
+            <div id="pokeinfo-container" class="grid-item"></div>
+            <div id="feed-container" class="grid-item scrollable">
+                <div id="feed">
+                    <div class="feed_selector">
+                            <button>For You</button>
+                            <button>Friends</button>
+                    </div>
+                    <div class="feed_boxes">
+
+                    <% datos.forEach(function(dato) { %>
+                    
+                        <div class="feed_box">
+                            <div class="feedText">
+                                <p class="teamName"><%= dato.team_name %></p>
+                                <p class="username">@<%= dato.nickname %></p>
+                            </div>
+                        
+                            <div class="pokemon_imgs">
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon1_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon2_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon3_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon4_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon5_id_pokemon %>"><a><img src="" alt=""></a></div>
+                                <div class="pokeframe" poke-id="<%= dato.Pokemon6_id_pokemon %>"><a><img src="" alt=""></a></div>
+
+                            </div>
+                            <div class="bottom_row">
+                                <div class="interactions">
+                                    <div class="likes">
+                                        <i class='bx bx-heart'></i>
+
+                                        <p><%= dato.likes %></p>
+                                    </div>
+                                    <div class="shared">
+                                        <i class='bx bx-share-alt' ></i>
+                                        <p>20</p>
+                                    </div>
+                                    <div class="comments">
+                                        <i class='bx bx-comment' ></i>
+                                        <p>5</p>
+
+                                    </div>
+                                </div>
+                                <a href="/view?id=<%= dato.id %>">
+                                    <button type="submit">View</button>
+                                </a>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <% }); %>
+
+                        
+                        
+                        
+                    </div>
+                    <div id="post">
+                        <button type="submit">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="suggests-container" class="grid-item"></div>
+            <div id="chat-container" class="grid-item"></div>
+    </main>
+    <footer>
+        <div id="footer-movil-container"></div>
+        <div id="footer-container"></div>
+    </footer>
+
+    <script src="/jscript/pokebal_animation.js"></script>
+    <script src="/jscript/load_footer.js"></script>
+    <script src="/jscript/feed_box_pokemon_clicked.js"></script>
+    <script src="/jscript/pokeframe_api_loader.js"></script>
+    
+    
+</body>
+</html>
