@@ -90,9 +90,42 @@ async function cargarImagenesPokemon() {
     }
 }
 
-cargarImagenesPokemon();
-cargarItemsPokemon();
-cargarNombresPokemon();
-cargarAbilitysPokemon();
-cargarMovesPokemon();
-cargarNaturesPokemon();
+// Muestra un spinner de carga
+function mostrarSpinner() {
+    const elementos = document.querySelectorAll('.container');
+    elementos.forEach(elemento => {
+        elemento.style.opacity = 0;
+    });
+}
+
+// Oculta el spinner de carga
+function ocultarSpinner() {
+    const elementos = document.querySelectorAll('.container');
+    elementos.forEach(elemento => {
+        elemento.style.opacity = 1;
+    });
+}
+
+// Carga todos los datos necesarios
+async function cargarDatosPokemon() {
+    mostrarSpinner();
+    try {
+        await Promise.all([
+            cargarImagenesPokemon(),
+            cargarItemsPokemon(),
+            cargarNombresPokemon(),
+            cargarAbilitysPokemon(),
+            cargarMovesPokemon(),
+            cargarNaturesPokemon()
+        ]);
+        // Oculta el spinner después de que todas las cargas de datos hayan terminado
+        ocultarSpinner();
+    } catch (error) {
+        console.error('Error al cargar los datos:', error);
+        // Puedes manejar el error aquí (por ejemplo, mostrar un mensaje de error)
+        ocultarSpinner();
+    }
+}
+
+// Llama a cargarDatosPokemon cuando el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', cargarDatosPokemon);
