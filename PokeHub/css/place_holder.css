@@ -1,0 +1,36 @@
+/* Fuente */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+/* CSS del LOG IN */
+
+body {
+    background-color: #EBEBEB;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    margin-top: 20rem;
+    height: 20rem;
+    width: 50rem;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    border-color: solid black 1px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}

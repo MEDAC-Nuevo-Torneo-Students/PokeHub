@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: 10.206.0.57    Database: pokehub
+-- Host: localhost    Database: pokehub
 -- ------------------------------------------------------
 -- Server version	8.3.0
 
@@ -131,30 +131,6 @@ INSERT INTO `post` VALUES (1,2,'2024-04-05 00:00:00',25),(2,3,'2024-04-22 10:34:
 UNLOCK TABLES;
 
 --
--- Table structure for table `prueba`
---
-
-DROP TABLE IF EXISTS `prueba`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `prueba` (
-  `Id` int NOT NULL,
-  `Puertas` int NOT NULL,
-  `color` varchar(50) NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `prueba`
---
-
-LOCK TABLES `prueba` WRITE;
-/*!40000 ALTER TABLE `prueba` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prueba` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `team`
 --
 
@@ -187,7 +163,7 @@ CREATE TABLE `team` (
   CONSTRAINT `team_ibfk_5` FOREIGN KEY (`id_Pokemon5_build`) REFERENCES `pokemon_build` (`id`),
   CONSTRAINT `team_ibfk_6` FOREIGN KEY (`id_Pokemon6_build`) REFERENCES `pokemon_build` (`id`),
   CONSTRAINT `team_ibfk_7` FOREIGN KEY (`id_user`) REFERENCES `user_info` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -196,7 +172,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (2,1,'M-Swampert Rain Team',1,2,3,4,5,6,'Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.'),(3,2,'Utretch Winnig Team',7,8,9,10,11,12,'I don\'t really understand how or why, but somehow I managed to go 8-1 (16-3 in individual games) in D1 and ultimately finish in top 32 in EUIC last weekend with this abomination of a team. A little background story provided in the replies :D'),(4,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete');
+INSERT INTO `team` VALUES (2,1,'M-Swampert Rain Team',1,2,3,4,5,6,'Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.'),(3,2,'Utretch Winnig Team',7,8,9,10,11,12,'I don\'t really understand how or why, but somehow I managed to go 8-1 (16-3 in individual games) in D1 and ultimately finish in top 32 in EUIC last weekend with this abomination of a team. A little background story provided in the replies :D'),(4,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete'),(5,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete'),(6,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete');
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,9 +191,8 @@ CREATE TABLE `user_info` (
   `description` varchar(250) NOT NULL,
   `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `nickname` (`nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +201,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (1,'Jjrajjr','jjrajjr@gmail.com','contrasenaSegura0','Jugador competitivo bla bla bla...',1),(2,'Albertito','albertito@gmail.com','contrasenasegura1','aksjdbsadonafsjn',1),(3,'Reax','reax@gmail.com','contrasenasegura2','dohsfnskhfdns',1),(4,'pablo','pablo@gmail.com','asd','',1),(5,'Juan','juan@gmail.com','juan','',1);
+INSERT INTO `user_info` VALUES (1,'Jjrajjr','jjrajjr@gmail.com','contrasenaSegura0','Jugador competitivo bla bla bla...',1),(2,'Albertito','albertito@gmail.com','contrasenasegura1','aksjdbsadonafsjn',1),(3,'Reax','reax@gmail.com','contrasenasegura2','dohsfnskhfdns',1),(4,'pablo','pablo@gmail.com','asd','',1),(5,'Juan','juan@gmail.com','juan','',1),(6,'Pablo','prm@gmail.com','contrasena','',1),(7,'pablo2','pablo2@gmail.com','asd','',1),(8,'miguel','miguel@gmail.com','asd','',1);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-02  9:57:52
+-- Dump completed on 2024-05-08  9:00:35
