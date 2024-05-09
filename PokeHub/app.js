@@ -187,17 +187,16 @@ app.get('/home', (req, res) => {
     pb6.def_ivs AS Pokemon6_def_ivs, pb6.spa_ivs AS Pokemon6_spa_ivs, pb6.spd_ivs AS Pokemon6_spd_ivs, 
     pb6.spe_ivs AS Pokemon6_spe_ivs, 
     p.likes,
-    p.upload_date,
     ui.nickname AS nickname
     
-    
 FROM team t 
-INNER JOIN pokemon_build pb1 ON t.id_Pokemon1_build = pb1.id 
-INNER JOIN pokemon_build pb2 ON t.id_Pokemon2_build = pb2.id 
-INNER JOIN pokemon_build pb3 ON t.id_Pokemon3_build = pb3.id 
-INNER JOIN pokemon_build pb4 ON t.id_Pokemon4_build = pb4.id 
-INNER JOIN pokemon_build pb5 ON t.id_Pokemon5_build = pb5.id 
-INNER JOIN pokemon_build pb6 ON t.id_Pokemon6_build = pb6.id 
+inner join team_ids ti on t.id = ti.team_id
+INNER JOIN pokemon_build pb1 ON ti.pokemon_build_id_1  = pb1.id 
+INNER JOIN pokemon_build pb2 ON ti.pokemon_build_id_2 = pb2.id 
+INNER JOIN pokemon_build pb3 ON ti.pokemon_build_id_3 = pb3.id 
+INNER JOIN pokemon_build pb4 ON ti.pokemon_build_id_4 = pb4.id 
+INNER JOIN pokemon_build pb5 ON ti.pokemon_build_id_5 = pb5.id 
+INNER JOIN pokemon_build pb6 ON ti.pokemon_build_id_6 = pb6.id 
 INNER JOIN post p ON t.id = p.id_team
 INNER JOIN user_info ui ON t.id_user = ui.id
 
@@ -241,13 +240,14 @@ app.get('/view', (req, res) => {
     CONCAT('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/', pb.id_pokemon, '.png') AS pokemon_photo
 FROM 
     team t
+    inner join team_ids ti on t.id = ti.team_id
     INNER JOIN pokemon_build pb ON 
-    t.id_Pokemon1_build = pb.id OR 
-    t.id_Pokemon2_build = pb.id OR 
-    t.id_Pokemon3_build = pb.id OR 
-    t.id_Pokemon4_build = pb.id OR 
-    t.id_Pokemon5_build = pb.id OR 
-    t.id_Pokemon6_build = pb.id
+    ti.pokemon_build_id_1 = pb.id OR 
+    ti.pokemon_build_id_2 = pb.id OR 
+    ti.pokemon_build_id_3 = pb.id OR 
+    ti.pokemon_build_id_4 = pb.id OR 
+    ti.pokemon_build_id_5 = pb.id OR 
+    ti.pokemon_build_id_6 = pb.id
     inner join user_info u on
     t.id_user = u.id;`;
 

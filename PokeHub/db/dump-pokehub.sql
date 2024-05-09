@@ -117,7 +117,7 @@ CREATE TABLE `post` (
   PRIMARY KEY (`id`),
   KEY `id_team` (`id_team`),
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_team`) REFERENCES `team` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,2,'2024-04-05 00:00:00',25),(2,3,'2024-04-22 10:34:53',86),(3,4,'2024-01-12 12:17:26',12);
+INSERT INTO `post` VALUES (1,1,'2024-04-05 00:01:00',25),(2,2,'2024-04-22 10:34:53',86),(3,3,'2024-01-12 12:17:26',12),(4,4,'2024-01-05 12:17:26',20),(5,5,'2024-01-02 12:17:26',23);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,29 +141,11 @@ CREATE TABLE `team` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_user` int NOT NULL,
   `team_name` varchar(20) NOT NULL,
-  `id_Pokemon1_build` int NOT NULL,
-  `id_Pokemon2_build` int NOT NULL,
-  `id_Pokemon3_build` int NOT NULL,
-  `id_Pokemon4_build` int NOT NULL,
-  `id_Pokemon5_build` int NOT NULL,
-  `id_Pokemon6_build` int NOT NULL,
   `description` varchar(250) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_Pokemon1_build` (`id_Pokemon1_build`),
-  KEY `id_Pokemon2_build` (`id_Pokemon2_build`),
-  KEY `id_Pokemon3_build` (`id_Pokemon3_build`),
-  KEY `id_Pokemon4_build` (`id_Pokemon4_build`),
-  KEY `id_Pokemon5_build` (`id_Pokemon5_build`),
-  KEY `id_Pokemon6_build` (`id_Pokemon6_build`),
   KEY `id_user` (`id_user`),
-  CONSTRAINT `team_ibfk_1` FOREIGN KEY (`id_Pokemon1_build`) REFERENCES `pokemon_build` (`id`),
-  CONSTRAINT `team_ibfk_2` FOREIGN KEY (`id_Pokemon2_build`) REFERENCES `pokemon_build` (`id`),
-  CONSTRAINT `team_ibfk_3` FOREIGN KEY (`id_Pokemon3_build`) REFERENCES `pokemon_build` (`id`),
-  CONSTRAINT `team_ibfk_4` FOREIGN KEY (`id_Pokemon4_build`) REFERENCES `pokemon_build` (`id`),
-  CONSTRAINT `team_ibfk_5` FOREIGN KEY (`id_Pokemon5_build`) REFERENCES `pokemon_build` (`id`),
-  CONSTRAINT `team_ibfk_6` FOREIGN KEY (`id_Pokemon6_build`) REFERENCES `pokemon_build` (`id`),
   CONSTRAINT `team_ibfk_7` FOREIGN KEY (`id_user`) REFERENCES `user_info` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,8 +154,50 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (2,1,'M-Swampert Rain Team',1,2,3,4,5,6,'Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.'),(3,2,'Utretch Winnig Team',7,8,9,10,11,12,'I don\'t really understand how or why, but somehow I managed to go 8-1 (16-3 in individual games) in D1 and ultimately finish in top 32 in EUIC last weekend with this abomination of a team. A little background story provided in the replies :D'),(4,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete'),(5,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete'),(6,3,'Sevilla Looser Team',4,3,7,2,10,12,'Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete');
+INSERT INTO `team` VALUES (1,1,'Equipo de Prueba','ESTO ES UNA PRUEBA'),(2,4,'M_Swampert Rain Team','Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.'),(3,2,'Utretch Winnig Team','I don\'t really understand how or why, but somehow I managed to go 8-1 (16-3 in individual games) in D1 and ultimately finish in top 32 in EUIC last weekend with this abomination of a team. A little background story provided in the replies :D'),(4,3,'Sevilla Winner Team','Lol vaya mierda de equipo Jaime podrias habertelo currado un poco más pedazo de paquete'),(5,5,'Prueba2','Todo equipo que abuse del clima contará con un pokémon cuya habilidad sea poner ese clima en el campo al salir a combatir.');
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `team_ids`
+--
+
+DROP TABLE IF EXISTS `team_ids`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `team_ids` (
+  `team_id` int NOT NULL,
+  `pokemon_build_id_1` int NOT NULL,
+  `pokemon_build_id_2` int NOT NULL,
+  `pokemon_build_id_3` int NOT NULL,
+  `pokemon_build_id_4` int NOT NULL,
+  `pokemon_build_id_5` int NOT NULL,
+  `pokemon_build_id_6` int NOT NULL,
+  KEY `team_id` (`team_id`),
+  KEY `pokemon_build_id_1` (`pokemon_build_id_1`),
+  KEY `pokemon_build_id_2` (`pokemon_build_id_2`),
+  KEY `pokemon_build_id_3` (`pokemon_build_id_3`),
+  KEY `pokemon_build_id_4` (`pokemon_build_id_4`),
+  KEY `pokemon_build_id_5` (`pokemon_build_id_5`),
+  KEY `pokemon_build_id_6` (`pokemon_build_id_6`),
+  CONSTRAINT `team_ids_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`),
+  CONSTRAINT `team_ids_ibfk_2` FOREIGN KEY (`pokemon_build_id_1`) REFERENCES `pokemon_build` (`id`),
+  CONSTRAINT `team_ids_ibfk_3` FOREIGN KEY (`pokemon_build_id_2`) REFERENCES `pokemon_build` (`id`),
+  CONSTRAINT `team_ids_ibfk_4` FOREIGN KEY (`pokemon_build_id_3`) REFERENCES `pokemon_build` (`id`),
+  CONSTRAINT `team_ids_ibfk_5` FOREIGN KEY (`pokemon_build_id_4`) REFERENCES `pokemon_build` (`id`),
+  CONSTRAINT `team_ids_ibfk_6` FOREIGN KEY (`pokemon_build_id_5`) REFERENCES `pokemon_build` (`id`),
+  CONSTRAINT `team_ids_ibfk_7` FOREIGN KEY (`pokemon_build_id_6`) REFERENCES `pokemon_build` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `team_ids`
+--
+
+LOCK TABLES `team_ids` WRITE;
+/*!40000 ALTER TABLE `team_ids` DISABLE KEYS */;
+INSERT INTO `team_ids` VALUES (1,5,7,2,3,9,1),(2,1,2,3,4,5,6),(3,7,8,9,10,11,12),(4,12,3,7,2,10,5),(5,6,8,4,1,9,3);
+/*!40000 ALTER TABLE `team_ids` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -218,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-08  9:00:35
+-- Dump completed on 2024-05-09  9:11:25
