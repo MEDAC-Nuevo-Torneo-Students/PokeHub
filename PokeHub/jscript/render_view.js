@@ -121,24 +121,36 @@ async function cargarImagenesPokemon() {
 }
 
 // Muestra un spinner de carga
-function mostrarSpinner() {
-    const elementos = document.querySelectorAll('.container');
-    elementos.forEach(elemento => {
-        elemento.style.opacity = 0;
-    });
-}
-
-// Oculta el spinner de carga
-function ocultarSpinner() {
+function mostrarContainers() {
     const elementos = document.querySelectorAll('.container');
     elementos.forEach(elemento => {
         elemento.style.opacity = 1;
     });
 }
 
-// Carga todos los datos necesarios
+function mostrarSpinner () {
+    const spinner = document.querySelector(".loader");
+    spinner.style.opacity = 1;
+}
+
+function ocultarSpinner () {
+    const spinner = document.querySelector(".loader");
+    spinner.style.opacity = 0;
+}
+
+// Oculta el spinner de carga
+function ocultarContainers() {
+    const elementos = document.querySelectorAll('.container');
+    elementos.forEach(elemento => {
+        elemento.style.opacity = 0;
+    });
+}
+
+
 async function cargarDatosPokemon() {
-    mostrarSpinner();
+    console.log("Iniciando carga de datos...");
+    ocultarContainers();
+    mostrarSpinner(); // Mostrar spinner antes de cargar los datos
     try {
         await Promise.all([
             cargarImagenesPokemon(),
@@ -148,14 +160,17 @@ async function cargarDatosPokemon() {
             cargarMovesPokemon(),
             cargarNaturesPokemon()
         ]);
-        // Oculta el spinner después de que todas las cargas de datos hayan terminado
-        ocultarSpinner();
+        console.log("Datos cargados correctamente.");
+        mostrarContainers(); // Muestra los contenedores después de cargar los datos
     } catch (error) {
         console.error('Error al cargar los datos:', error);
-        // Puedes manejar el error aquí (por ejemplo, mostrar un mensaje de error)
-        ocultarSpinner();
+        // Maneja el error aquí (por ejemplo, mostrar un mensaje de error)
+    } finally {
+        console.log("Ocultando spinner...");
+        ocultarSpinner(); // Asegúrate de ocultar el spinner después de cargar los contenedores
     }
 }
+
 
 // Llama a cargarDatosPokemon cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', cargarDatosPokemon);
