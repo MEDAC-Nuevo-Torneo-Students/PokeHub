@@ -150,7 +150,12 @@ function ocultarContainers() {
 async function cargarDatosPokemon() {
     console.log("Iniciando carga de datos...");
     ocultarContainers();
-    mostrarSpinner(); // Mostrar spinner antes de cargar los datos
+
+    // Establecer un temporizador para mostrar el spinner después de 2 segundos
+    const spinnerTimeout = setTimeout(() => {
+        mostrarSpinner();
+    }, 500);
+
     try {
         await Promise.all([
             cargarImagenesPokemon(),
@@ -166,10 +171,12 @@ async function cargarDatosPokemon() {
         console.error('Error al cargar los datos:', error);
         // Maneja el error aquí (por ejemplo, mostrar un mensaje de error)
     } finally {
-        console.log("Ocultando spinner...");
+        // Limpiar el temporizador para mostrar el spinner
+        clearTimeout(spinnerTimeout);
         ocultarSpinner(); // Asegúrate de ocultar el spinner después de cargar los contenedores
     }
 }
+
 
 
 // Llama a cargarDatosPokemon cuando el DOM esté completamente cargado
