@@ -24,7 +24,33 @@
 </head>
 <body>
     <header>
-        <div id="header-container"></div>
+        <div id="header-container">
+                <div class="header" id="header">
+                  <a href="/home">
+                    <img src="/src/img/logo.png" id="logo">
+                  </a>
+                  
+                  <button class="circle" id="circle"></button>
+                  <div class="header-button">
+                    <button class="switch" id="switch">        
+                    </button>
+                    <div class="icons-user" >
+                      <i class='bx bx-user-circle'></i>
+                      <div class="dropdown" id="dropdown">
+                        <!-- Contenido del menú desplegable -->
+                        <ul>  
+                            <div class="profile-picture "><img src="/img/dragonite-dropdown.png"></div>
+                            <a id="usuario-dropdown">¡Bienvenido <%= user %> !</a>
+                            <li><a href="#"><i class='bx bx-user'></i>View Profile</a></li>
+                            <li><a href="#"><i class='bx bx-cog' ></i>Configuration</a></li>
+                            <li><a href="#"><i class='bx bx-star' ></i>Premium Plan</a></li>
+                            <li><a href="/logout"><i class='bx bx-log-out' ></i>Log Out</a></li>
+                        </ul>
+                    </div>
+                    </div>  
+                  </div>
+                </div>
+        </div>
     </header>
     <main>
         
@@ -72,7 +98,7 @@
 
                                     </div>
                                 </div>
-                                <a href="/view">
+                                <a href="/view?id=<%= dato.id %>">
                                     <button type="submit">View</button>
                                 </a>
                                 
@@ -87,7 +113,9 @@
                         
                     </div>
                     <div id="post">
+                        <a href="/html/team-builder.html">
                         <button type="submit">+</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,7 +128,6 @@
     </footer>
 
     <script src="/jscript/pokebal_animation.js"></script>
-    <script src="/jscript/load_header.js"></script>
     <script src="/jscript/load_footer.js"></script>
     <script src="/jscript/feed_box_pokemon_clicked.js"></script>
     <script src="/jscript/pokeframe_api_loader.js"></script>

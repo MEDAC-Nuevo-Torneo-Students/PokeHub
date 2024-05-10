@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
--- Host: localhost    Database: pokehub
+-- Host: 10.206.0.57    Database: pokehub
 -- ------------------------------------------------------
--- Server version	8.0.36
+-- Server version	8.3.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -98,7 +98,7 @@ CREATE TABLE `pokemon_build` (
 
 LOCK TABLES `pokemon_build` WRITE;
 /*!40000 ALTER TABLE `pokemon_build` DISABLE KEYS */;
-INSERT INTO `pokemon_build` VALUES (1,260,'male',3,793,16,127,89,8,182,31,31,31,31,31,31,4,252,0,0,0,252),(2,279,'female',2,262,5,503,89,366,182,31,31,31,31,31,31,252,0,4,0,0,252),(3,598,'male',1,583,12,73,334,442,182,31,31,31,31,31,0,0,4,252,0,252,0),(4,796,'unknown',1,274,5,87,521,412,605,31,0,31,31,31,31,4,0,0,252,0,252),(5,10021,'unknown',1,247,9,89,157,12,182,31,31,31,31,31,31,4,252,0,0,0,252),(6,237,'female',1,252,7,252,370,270,197,31,31,31,31,31,31,4,252,0,0,0,252),(7,144,'unknown',3,274,3,59,58,573,329,31,0,31,31,31,31,252,0,44,196,4,12),(8,10104,'female',3,246,5,59,585,694,270,31,1,31,31,31,31,84,0,132,84,4,204),(9,10230,'male',1,197,11,394,157,457,245,31,31,31,31,31,31,52,212,4,0,4,236),(10,10273,'female',1,2106,16,904,532,266,596,31,31,31,20,31,31,236,12,52,0,4,204),(11,645,'male',3,247,5,414,188,164,182,31,0,31,31,31,31,84,0,52,124,4,252),(12,1021,'male',1,683,3,527,434,909,555,31,20,31,31,31,31,244,0,60,100,20,84);
+INSERT INTO `pokemon_build` VALUES (1,10064,'male',33,793,16,127,89,8,182,31,31,31,31,31,31,4,252,0,0,0,252),(2,279,'female',2,262,5,503,542,366,182,31,31,31,31,31,31,252,0,4,0,0,252),(3,598,'male',160,583,12,73,334,442,182,31,31,31,31,31,0,0,4,252,0,252,0),(4,796,'unknown',224,274,5,87,521,412,605,31,0,31,31,31,31,4,0,0,252,0,252),(5,10021,'unknown',22,247,9,89,157,12,182,31,31,31,31,31,31,4,252,0,0,0,252),(6,237,'female',22,252,7,252,370,270,197,31,31,31,31,31,31,4,252,0,0,0,252),(7,144,'unknown',3,274,3,59,58,573,329,31,0,31,31,31,31,252,0,44,196,4,12),(8,10104,'female',3,246,5,59,585,694,270,31,1,31,31,31,31,84,0,132,84,4,204),(9,10230,'male',1,197,11,394,157,457,245,31,31,31,31,31,31,52,212,4,0,4,236),(10,10273,'female',1,2106,16,904,532,266,596,31,31,31,20,31,31,236,12,52,0,4,204),(11,645,'male',3,247,5,414,188,164,182,31,0,31,31,31,31,84,0,52,124,4,252),(12,1021,'male',1,683,3,527,434,909,555,31,20,31,31,31,31,244,0,60,100,20,84);
 /*!40000 ALTER TABLE `pokemon_build` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,6 +128,30 @@ LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
 INSERT INTO `post` VALUES (1,2,'2024-04-05 00:00:00',25),(2,3,'2024-04-22 10:34:53',86),(3,4,'2024-01-12 12:17:26',12);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `prueba`
+--
+
+DROP TABLE IF EXISTS `prueba`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `prueba` (
+  `Id` int NOT NULL,
+  `Puertas` int NOT NULL,
+  `color` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prueba`
+--
+
+LOCK TABLES `prueba` WRITE;
+/*!40000 ALTER TABLE `prueba` DISABLE KEYS */;
+/*!40000 ALTER TABLE `prueba` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -191,8 +215,9 @@ CREATE TABLE `user_info` (
   `description` varchar(250) NOT NULL,
   `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `nickname` (`nickname`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +226,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (1,'Jjrajjr','jjrajjr@gmail.com','contrasenaSegura0','Jugador competitivo bla bla bla...',1),(2,'Albertito','albertito@gmail.com','contrasenasegura1','aksjdbsadonafsjn',1),(3,'Reax','reax@gmail.com','contrasenasegura2','dohsfnskhfdns',1);
+INSERT INTO `user_info` VALUES (1,'Jjrajjr','jjrajjr@gmail.com','contrasenaSegura0','Jugador competitivo bla bla bla...',1),(2,'Albertito','albertito@gmail.com','contrasenasegura1','aksjdbsadonafsjn',1),(3,'Reax','reax@gmail.com','contrasenasegura2','dohsfnskhfdns',1),(4,'pablo','pablo@gmail.com','asd','',1),(5,'Juan','juan@gmail.com','juan','',1);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,4 +243,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-27 19:08:18
+-- Dump completed on 2024-05-02  9:57:52

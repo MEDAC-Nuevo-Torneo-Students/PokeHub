@@ -29,11 +29,21 @@ const connection = require('./db');
 
 // Firsr routes
 app.get('/', (req, res) => {
-    res.render('index');
+    if (req.session.loggedin) {
+        res.redirect('/home')
+    }
+    else {
+        res.render('index');
+    }
 });
 
 app.get('/login', (req, res) => {
-    res.render('login');
+    if (req.session.loggedin) {
+        res.redirect('/home')
+    }
+    else {
+        res.render('login');
+    }
 });
 
 //  Auth
@@ -61,6 +71,7 @@ app.post('/auth', async (req,res)=>{
                 });
             } else {
                 req.session.loggedin = true;
+                req.session.user =  user;
                 res.render('login', {
                     alert: true,
                     alertTitle: "Connection",
@@ -127,6 +138,7 @@ app.get('/logout',  (req, res) => {
 
 // Auth pages
 app.get('/home', (req, res) => {
+    const user = req.session.user;
     const sqlQuery = `SELECT t.*, 
                         pb1.id AS Pokemon1_id, pb1.id_pokemon AS Pokemon1_id_pokemon, pb1.gender AS Pokemon1_gender, 
                         pb1.id_ability AS Pokemon1_id_ability, pb1.id_item AS Pokemon1_id_item, pb1.id_nature AS Pokemon1_id_nature, 
@@ -185,7 +197,7 @@ app.get('/home', (req, res) => {
                         }
                 
                         if (req.session.loggedin) {
-                            res.render('home', { datos: results});
+                            res.render('home', { datos: results, user: user});
                         } else {
                             res.render('login', {
                                 alert: true,
@@ -202,9 +214,13 @@ app.get('/home', (req, res) => {
 
 
 app.get('/view', (req, res) => {
-    const sqlQuery = `SELECT 
+    // Obtener la ID de la URL
+    const id = req.query.id;
+    const user = req.session.user;
+
+    let sqlQuery = `SELECT 
     t.id as team_id,
-    t.id_user, 
+    u.nickname, 
     t.team_name,
     t.description,
     pb.*,
@@ -218,19 +234,32 @@ FROM
     t.id_Pokemon4_build = pb.id OR 
     t.id_Pokemon5_build = pb.id OR 
     t.id_Pokemon6_build = pb.id
-WHERE 
-    t.id = 2;
-;
-`;
-                    
+    inner join user_info u on
+   	t.id_user = u.id;`;
 
+    
     connection.query(sqlQuery, (err, results) => {
+        let team_description;
+        results.forEach(function(dato){
+            if(dato.team_id == id) {
+                team_description = dato.description;
+            }});
+        let team_name;
+        results.forEach(function(dato){
+            if(dato.team_id == id) {
+                team_name = dato.team_name;
+            }});
+        let nickname;
+        results.forEach(function(dato){
+        if(dato.team_id == id) {
+            nickname = dato.nickname;
+        }});
         if (err) {
             console.error('Error al realizar la consulta:', err);
             res.status(500).send('Error interno del servidor');
         } 
         if (req.session.loggedin) {
-            res.render('view-screen', { datos: results});
+            res.render('view-screen', { datos: results, id: id, nickname: nickname, team_name: team_name, team_description: team_description, user: user});
         } else {
             res.render('login', {
                 alert: true,

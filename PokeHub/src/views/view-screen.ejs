@@ -5,25 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipo Pokémon</title>
+    <link rel="icon" href="/img/logo_pokeball.png" type="png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/view-screen.css">
-    <link rel="stylesheet" href="/css/header_abierto.css">
-    <script src="/jscript/load_header.js"></script>
-    <script src="/jscript/go_to_links.js"></script>
+    <link rel="stylesheet" href="/css/barra_home_movil.css">
     <script src="/jscript/dark-mode.js"></script>
+    <script src="/jscript/load_footer_movil.js"></script>
     <script src="/jscript/menu-perfil.js"></script>
-    <script src="/jscript/load_pokeinfo.js"></script>
+    
+    
     <link rel="stylesheet" href="/css/header_abierto.css">
     <link rel="stylesheet" href="/css/footer_abierto.css">
-
-    <div id="header-container"></div>
-
 </head>
 
 <body>
+
+    <div id="header-container">
+        <div class="header" id="header">
+            <a href="/home">
+              <img src="/src/img/logo.png" id="logo">
+            </a>
+            
+            <button class="circle" id="circle"></button>
+            <div class="header-button">
+              <button class="switch" id="switch">        
+              </button>
+              <div class="icons-user" >
+                <i class='bx bx-user-circle'></i>
+                <div class="dropdown" id="dropdown">
+                  <!-- Contenido del menú desplegable -->
+                  <ul>  
+                      <div class="profile-picture "><img src="/img/dragonite-dropdown.png"></div>
+                      <a id="usuario-dropdown">¡Bienvenido <%= user %> !</a>
+                      <li><a href="#"><i class='bx bx-user'></i>View Profile</a></li>
+                      <li><a href="#"><i class='bx bx-cog' ></i>Configuration</a></li>
+                      <li><a href="#"><i class='bx bx-star' ></i>Premium Plan</a></li>
+                      <li><a href="/logout"><i class='bx bx-log-out' ></i>Log Out</a></li>
+                  </ul>
+              </div>
+              </div>  
+            </div>
+          </div>
+    </div>
+
+
     <div id = "espacio"></div>
     
-    <% datos.forEach(function(dato) { %>
+    <% datos.forEach(function(dato) {
+        if (dato.team_id == id) {%>
             <div class="container">
                 <div class="head">
                     <div class="pokemon-card">
@@ -33,26 +62,26 @@
                         <div class="pokemon-details">
                             <ul class="pokemon-list">
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/pokeball.png">
-                                    <span><%= dato.id_pokemon %></span></li>
+                                    <span id = "name"><%= dato.id_pokemon %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/pgl/swampertite.png">
-                                    <span><%= dato.id_item %></span></li>
+                                    <span id = "item"><%= dato.id_item %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/abilitycapsule.png">
-                                    <span><%= dato.id_ability %></span></li>
+                                    <span id = "ability"><%= dato.id_ability %></span></li>
                                 <li><img src="https://www.serebii.net/itemdex/sprites/sv/jollymint.png">
-                                    <span><%= dato.id_nature %></span></li>
+                                    <span id = "nature"><%= dato.id_nature %></span></li>
                             </ul>
                         </div>
 
                         <div class="details-column">
                             <ul class="pokemon-list">
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/water.png">
-                                    <span><%= dato.id_move_1 %></span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ground.png">
-                                    <span><%= dato.id_move_2 %></span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/ice.png"> 
-                                    <span><%= dato.id_move_3 %></span></li>
-                                <li><img src="https://www.serebii.net/pokedex-sv/type/icon/normal.png">
-                                    <span><%= dato.id_move_4 %></span></li>
+                                <li><img data-id="<%= dato.id_move_1 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_1 %></span></li>
+                                <li><img data-id="<%= dato.id_move_2 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_2 %></span></li>
+                                <li><img data-id="<%= dato.id_move_3 %>" id="imgmove"> 
+                                    <span id = "move"><%= dato.id_move_3 %></span></li>
+                                <li><img data-id="<%= dato.id_move_4 %>" id="imgmove">
+                                    <span id = "move"><%= dato.id_move_4 %></span></li>
                             </ul>
                         </div>
                         <div class="stats">
@@ -97,50 +126,33 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-            <% }); %>
+            <% }}); %>
             <div class="right-panel">
                 <div class="user-card">
-                    <i>Jjrajjr</i>
+                    <i><%= nickname%></i>
                 </div>
                 <div class="import-card">
-                    <a>Import</a>
+                    <a>IMPORT</a>
                 </div>
                 <div class="team-card">
-                    <a>Rain Team</a>
+                    <a><%= team_name%></a>
                 </div>
             </div>
 
 
             </div>
             <div class="team-description">
-                <a>-Pelipper is the newest Drizzle user in the games, as it has gained the Drizzle ability in the 7th
-                    Generation. While Politoed is more defensive in nature, Pelipper is a rain setter that barring from
-                    using
-                    Tailwind to increase the speed of its teammates, will spend the rest of its time on the field going
-                    for
-                    damaging moves. We saw how popular Pelipper was during the VGC 2017 format and what makes it
-                    especially
-                    useful is that most Rain teams in the past would struggle with grass types since the flying typing
-                    adds a
-                    new dynamic to the interaction.<br><br>
-
-                    -Swampert has received a major buff in the way Mega Evolved Pokemon interacts with weather upon Mega
-                    Evolving. You can check out this video for more info, but what happens is once Swampert Mega Evolves
-                    in the
-                    rain, it automatically gains the Swift Swim ability and the speed boost in the rain. This alone
-                    makes it a
-                    terrifying Pokemon as Swampert can become the fastest Pokemon on the field and threaten with some
-                    big
-                    damage. Check out this pastebin for sample sets.</a>
-
+                <a><%= team_description%></a>
             </div>
+            <div id = "espacio"></div>
+            <div id="footer-movil-container"></div>
             <div id="footer-container"></div>
 
 </body>
 <script src="/jscript/load_footer.js"></script>
 <script src="/jscript/pokebal_animation.js"></script>
+<script src="/jscript/render_view.js"></script>
+
 
 </html>
