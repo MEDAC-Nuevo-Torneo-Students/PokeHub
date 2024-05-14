@@ -194,26 +194,134 @@ frame img {
     border: 2px solid #ccc; 
 }
 
-    .loader {
-        width: 10rem;
-        height: 10rem;
-        z-index: 5000;
-        position:absolute;
-        border: 5px solid #ff0000;
-        border-bottom-color: transparent;
-        border-radius: 50%;
-        top: 27rem;
-        left: 20rem;
-        opacity: 0;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
+.loader {
+    width: 10rem;
+    height: 10rem;
+    z-index: 5000;
+    position:absolute;
+    border: 5px solid #ff0000;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    top: 27rem;
+    left: 20rem;
+    opacity: 0;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+    @media screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
         }
     
-        @keyframes rotation {
-        0% {
-            transform: rotate(0deg);
+        .pokemon-card {
+            width: 27rem; 
+            margin: 0px;
+            margin-top: 5%;
+            padding: 0px;
+            height: 8rem;
+            box-sizing: border-box;
+            font-size: xx-small;
+            gap: 0.5rem;
+            display: flex;
         }
-        100% {
-            transform: rotate(360deg);
+    
+        .frame {
+            margin-top:7%;
+            width: 4rem;
+            height: 4rem;
         }
-        } 
+    
+        .frame img {
+            width: 4rem;
+            height: 4rem;
+        }
+    
+        .pokemon-details {
+            margin-top: 1.5rem;
+            width: 100%;
+            text-align: center;
+            transform: translateX(0rem);
+        }
+        .pokemon-list li span{
+            font-size: xx-small;
+            margin:0px;
+            padding:0px;
+        }
+        .details-column {
+            width: 100%;
+            margin-top: 1rem;
+            transform: translateX(0rem);
+        }
+    
+        .stats {
+            width: 100%;
+            margin: 15px;
+            padding: 10px;
+            font-size: 0.9rem;
+            transform: translateX(0rem);
+            margin-left:0px;
+            margin-right: 5px;
+        }
+    
+        .right-panel {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    
+        .user-card,
+        .team-card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        .import-card {
+            width: 30%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+    
+        .team-description {
+            width: 90%;
+            margin: 20px auto; 
+            padding: 20px;
+            max-height: 500px;
+            overflow-y: scroll;
+            text-align: center;
+        }
+    
+        .stats th,
+        .stats td {
+            padding: 0px;
+            font-size: xx-small;
+        }
+    
+        .loader {
+            width: 10rem;
+            height: 10rem;
+            z-index: 5000;
+            position:absolute;
+            border: 5px solid #ff0000;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            top: 27rem;
+            left: 30%;
+            opacity: 0;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            }
+    }
+    
