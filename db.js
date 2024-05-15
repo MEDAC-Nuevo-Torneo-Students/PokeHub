@@ -1,12 +1,15 @@
 const mysql = require('mysql');
 
-// MySQL Connection
+
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: "pokehub-db.mysql.database.azure.com",
+    user: "pokehub_admin",
+    password: "proyectointegrado10,.",
+    database: "pokehub",
     port: 3306,
-    user: 'root',
-    password: 'contrasena',
-    database: 'pokehub',
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 connection.connect((err) => {

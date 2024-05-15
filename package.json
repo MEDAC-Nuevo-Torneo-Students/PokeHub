@@ -1,4 +1,11 @@
 {
+  "name": "pokehub",
+  "version": "1.0.0",
+  "description": "Pokehub app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "async": "^3.2.5",
     "bcryptjs": "^2.4.3",
