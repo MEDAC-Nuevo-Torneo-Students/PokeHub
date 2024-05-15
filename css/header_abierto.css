@@ -73,6 +73,7 @@ ul li a i {
 
 #usuario-dropdown{
     margin-bottom: 1rem;
+    color:black;
 }
 .profile-picture {
     display: flex;
