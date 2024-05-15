@@ -220,10 +220,6 @@ html {
 
 @media screen and (max-width: 768px) {
 
-    #post button {
-        right: 1rem;
-    }
-
     .feed_selector {
     position: fixed;
     display: flex;
@@ -244,7 +240,7 @@ html {
     }
     
     html {
-        font-size: 50%; 
+        font-size: 70%; 
     }
 
     .feed_boxes{
@@ -261,12 +257,14 @@ html {
     }
 
     #post button {
-
-        border-radius: 4px;
+        right: 3.5rem;
+        width:3.5rem;
+        height:3.5rem;
+        border-radius: 0.8rem;
     }
 
     .pokeframe {
-        border-radius: 8px;
+        border-radius: 1.5rem;
     }
 
 
