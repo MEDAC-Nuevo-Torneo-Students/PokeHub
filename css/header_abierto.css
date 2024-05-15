@@ -35,6 +35,7 @@
     justify-content: space-around;
     margin-left: 10rem;
     right: -2rem;
+    z-index: 23;
     
     
 }
@@ -72,6 +73,7 @@ ul li a i {
 
 
 #usuario-dropdown{
+    color:black;
     margin-bottom: 1rem;
 }
 .profile-picture {
@@ -84,7 +86,7 @@ ul li a i {
     width: 50px; 
     height: 50px; 
     border-radius: 50%; 
-    border: 2px solid white; 
+    border: 2px solid black; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
@@ -193,7 +195,7 @@ ul li a i {
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }  
- 
+
 
 .switch.active::after{
     -webkit-transform: translateX(29px);
