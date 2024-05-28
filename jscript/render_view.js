@@ -1,4 +1,3 @@
-
 //Traduce los IDs por los nombres de los Pokemon
 async function cargarNombresPokemon() {
     //Recoge la etiqueta del html
@@ -418,8 +417,6 @@ async function cargarDatosPokemon() {
         ocultarSpinner(); // Asegúrate de ocultar el spinner después de cargar los contenedores
     }
 }
-
-
 
 // Llama a cargarDatosPokemon cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', cargarDatosPokemon);
