@@ -171,12 +171,12 @@ async function calcAtkPokemon() {
             let natureValue = 1;
             const naturePositive = ["lonely", "adamant", "naughty", "brave"];
             const natureNegative = ["bold", "modest", "calm", "timid"];
-            if (natureName in naturePositive) {
+            if (naturePositive.includes(natureName)) {
                 natureValue = 1.1;
-                atk_totals[i].style.color = red;
-            } else if (natureName in natureNegative) {
+                atk_totals[i].style.color = "red";
+            } else if (natureNegative.includes(natureName)) {
                 natureValue = 0.9;
-                atk_totals[i].style.color = blue;
+                atk_totals[i].style.color = "blue";
             }
             //Hace el calculo de la estadistica total con los datos y lo almacena en su etiqueta total
             atk_totals[i].textContent = Math.floor(((0.01 * (2 * atk_base + atk_iv + Math.floor(0.25 * atk_ev)) * 50) + 5) * natureValue);
@@ -213,12 +213,12 @@ async function calcDefPokemon() {
             let natureValue = 1;
             const naturePositive = ["bold", "impish", "lax", "relaxed"];
             const natureNegative = ["lonely", "mild", "gentle", "hasty"];
-            if (natureName in naturePositive) {
+            if (naturePositive.includes(natureName)) {
                 natureValue = 1.1;
-                atk_totals[i].style.color = red;
-            } else if (natureName in natureNegative) {
+                def_totals[i].style.color = "red";
+            } else if (natureNegative.includes(natureName)) {
                 natureValue = 0.9;
-                atk_totals[i].style.color = blue;
+                def_totals[i].style.color = "blue";
             }
             //Hace el calculo de la estadistica total con los datos y lo almacena en su etiqueta total
             def_totals[i].textContent = Math.floor(((0.01 * (2 * def_base + def_iv + Math.floor(0.25 * def_ev)) * 50) + 5) * natureValue);
@@ -255,12 +255,12 @@ async function calcSpAPokemon() {
             let natureValue = 1;
             const naturePositive = ["modest", "mild", "rash", "quiet"];
             const natureNegative = ["adamant", "impish", "careful", "jolly"];
-            if (natureName in naturePositive) {
+            if (naturePositive.includes(natureName)) {
                 natureValue = 1.1;
-                atk_totals[i].style.color = red;
-            } else if (natureName in natureNegative) {
+                spa_totals[i].style.color = "red";
+            } else if (natureNegative.includes(natureName)) {
                 natureValue = 0.9;
-                atk_totals[i].style.color = blue;
+                spa_totals[i].style.color = "blue";
             }
             //Asigna la nueva información al lugar de donde recogió el ID, cambiando su valor
             spa_totals[i].textContent = Math.floor(((0.01 * (2 * spa_base + spa_iv + Math.floor(0.25 * spa_ev)) * 50) + 5) * natureValue);
@@ -297,12 +297,13 @@ async function calcSpDPokemon() {
             let natureValue = 1;
             const naturePositive = ["calm", "gentle", "careful", "sassy"];
             const natureNegative = ["naughty", "lax", "rash", "naive"];
-            if (natureName in naturePositive) {
+            console.log(natureName);
+            if (naturePositive.includes(natureName)) {
                 natureValue = 1.1;
-                atk_totals[i].style.color = red;
-            } else if (natureName in natureNegative) {
+                spd_totals[i].style.color = "red";
+            } else if (natureNegative.includes(natureName)) {
                 natureValue = 0.9;
-                atk_totals[i].style.color = blue;
+                spd_totals[i].style.color = "blue";
             }
             //Asigna la nueva información al lugar de donde recogió el ID, cambiando su valor
             spd_totals[i].textContent = Math.floor(((0.01 * (2 * spd_base + spd_iv + Math.floor(0.25 * spd_ev)) * 50) + 5) * natureValue);
@@ -339,12 +340,12 @@ async function calcSpePokemon() {
             let natureValue = 1;
             const naturePositive = ["timid", "hasty", "jolly", "naive"];
             const natureNegative = ["brave", "relaxed", "quiet", "sassy"];
-            if (natureName in naturePositive) {
+            if (naturePositive.includes(natureName)) {
                 natureValue = 1.1;
-                atk_totals[i].style.color = red;
-            } else if (natureName in natureNegative) {
+                spe_totals[i].style.color = "red";
+            } else if (natureNegative.includes(natureName)) {
                 natureValue = 0.9;
-                atk_totals[i].style.color = blue;
+                spe_totals[i].style.color = "blue";
             }
             //Asigna la nueva información al lugar de donde recogió el ID, cambiando su valor
             spe_totals[i].textContent = Math.floor(((0.01 * (2 * spe_base + spe_iv + Math.floor(0.25 * spe_ev)) * 50) + 5) * natureValue);
